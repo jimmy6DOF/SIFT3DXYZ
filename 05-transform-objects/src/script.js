@@ -29,6 +29,16 @@ mesh.position.set(0.7, -0.6, 1)
 // mesh.scale.z = 0.5
 mesh.scale.set(2, 0.5, 0.5)
 
+//Rotation
+//Rotation uses Euler (like putting a stick through the center of the axis)
+//reorder lets you reorder your axis. Axis order can skew how the camera turns and twists. in a FPS you want Y, then X. 
+mesh.rotation.reorder('YXZ')
+mesh.rotation.x = Math.PI * 0.25
+mesh.rotation.y = Math.PI * 0.25
+
+//Rotation with Quaternion
+
+
 // Axes helper
 const axesHelper = new THREE.AxesHelper(2)
 scene.add(axesHelper)
@@ -49,6 +59,13 @@ camera.position.z = 3
 // camera.position.y = 1
 // camera.position.x = 1
 scene.add(camera)
+
+//Camera Look-at method
+//create new point to look at
+// camera.lookAt(new THREE.Vector3(3, 0, 0))
+//Look at object specifically
+camera.lookAt(mesh.position)
+
 
 /**
  * Renderer
