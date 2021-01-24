@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -11,9 +12,16 @@ const scene = new THREE.Scene()
  * Objects
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
 const mesh = new THREE.Mesh(geometry, material)
+mesh.position.x = 0.7
+mesh.position.y = - 0.6
+mesh.position.z = 1
+
 scene.add(mesh)
+
+mesh.position.normalize()
+console.log(mesh.position.length())
 
 /**
  * Sizes
