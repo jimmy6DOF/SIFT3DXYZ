@@ -13,7 +13,7 @@ scene.add( axesHelper );
 
 // Object
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
@@ -34,11 +34,21 @@ const renderer = new THREE.WebGLRenderer({
 })
 renderer.setSize(sizes.width, sizes.height)
 
+//Time
+let time = Date.now()
+
 //Animations
 const tick = () => 
 {
+    //Time
+    const currentTime = Date.now()
+    const deltaTime = currentTime - time
+    time = currentTime
+
+    // console.log(deltaTime)
+
     //Update Objects
-    mesh.rotation.y += 0.01
+    mesh.rotation.y += 0.001 * deltaTime
     // mesh.position.y += 0.01
 
     //Render the Renderer
