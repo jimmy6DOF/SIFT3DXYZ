@@ -44,8 +44,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     //Update Objects
-    mesh.rotation.y = elapsedTime * Math.PI * 2
-
+    mesh.rotation.y = Math.sin(elapsedTime)
 
     //Render the Renderer
     renderer.render(scene, camera)
