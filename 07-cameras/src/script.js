@@ -9,7 +9,7 @@ const cursor = {
 
 window.addEventListener('mousemove', (event) => {
     cursor.x = event.clientX / sizes.width - 0.5
-    cursor.y = event.clientY / sizes.height - 0.5
+    cursor.y = - (event.clientY / sizes.height - 0.5)
     // console.log(cursor.x)
     // console.log(cursor.y)
 })
@@ -53,7 +53,6 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 
 // camera.position.x = 2
 // camera.position.y = 2
 camera.position.z = 3
-camera.lookAt(mesh.position)
 scene.add(camera)
 
 // Renderer
@@ -75,6 +74,7 @@ const tick = () =>
     //Update camera (on each tick)
     camera.position.x = cursor.x * 3
     camera.position.y = cursor.y * 3
+    camera.lookAt(new THREE.Vector3())
 
 
     // Render
