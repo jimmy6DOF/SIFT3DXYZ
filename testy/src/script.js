@@ -1,89 +1,57 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import vertexShader from './shaders/vertex.glsl';
-import fragmentShader from './shaders/fragment.glsl';
-import img from './assets/text.png';
+import './style.css'
+import * as THREE from 'three'
 
-let camera, scene, renderer;
-let geometry, material, mesh;
-let controls;
-let clock;
+/**
+ * Base
+ */
+// Canvas
+const canvas = document.querySelector('canvas.webgl')
 
-init();
-animate();
-
-function init() {
-  // Renderer
-  renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true,
-  });
-  renderer.setClearColor('black', 1);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  document.body.appendChild(renderer.domElement);
-
-  // Camera
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 8;
-
-  // Scene
-  scene = new THREE.Scene();
-
-  // Geometry
-  geometry = new THREE.TorusGeometry(3, 1, 100, 100);
-
-  // Texture
-  const texture = new THREE.TextureLoader().load(img, (texture)=>{
-    texture.minFilter = THREE.NearestFilter;
-  });
-
-  // Material
-  material = new THREE.ShaderMaterial({
-    vertexShader,
-    fragmentShader,
-    uniforms: {
-      uTime: { value: 0 },
-      uTexture: { value: texture },
-    },
-    transparent: true,
-    side: THREE.DoubleSide
-  });
-
-  // Mesh
-  mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
-
-  // Controls
-  controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-
-  // Clock
-  clock = new THREE.Clock();
-
-  // Events
-  onWindowResize();
-  window.addEventListener('resize', onWindowResize, false);
+// Sizes
+const sizes = {
+    width: 800,
+    height: 600
 }
 
-function onWindowResize() {
-  let width = window.innerWidth;
-  let height = window.innerHeight;
+// Scene
+const scene = new THREE.Scene()
 
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
+// Object
+const mesh = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+scene.add(mesh)
 
-  renderer.setSize(width, height);
+// Camera
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+camera.position.x = 2
+camera.position.y = 2
+camera.position.z = 2
+camera.lookAt(mesh.position)
+scene.add(camera)
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+})
+renderer.setSize(sizes.width, sizes.height)
+
+// Animate
+const clock = new THREE.Clock()
+
+const tick = () =>
+{
+    const elapsedTime = clock.getElapsedTime()
+
+    // Update objects
+    mesh.rotation.y = elapsedTime;
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
 }
 
-function animate() {
-  requestAnimationFrame(animate);
-  render();
-}
-
-function render() {
-  controls.update();
-
-  material.uniforms.uTime.value = clock.getElapsedTime();
-
-  renderer.render(scene, camera);
-}
+tick()
