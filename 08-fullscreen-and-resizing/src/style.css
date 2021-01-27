@@ -3,8 +3,17 @@
   padding: 0;
 }
 
+/* We declared our canvas as having a 
+class of webgl earlier, now we are going to modify that class 
+and get rid of the scroll bars */
+html,
+body {
+  overflow: hidden;
+}
+
 .webgl {
   position: fixed;
   top: 0;
   left: 0;
+  outline: none;
 }
