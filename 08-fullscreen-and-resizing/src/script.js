@@ -46,19 +46,32 @@ window.addEventListener('resize', () =>
 
     //Double CLick
     window.addEventListener('dblclick', () =>
+{
+    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
+
+    if(!fullscreenElement)
     {
-        if(!document.fullscreenElement)
+        if(canvas.requestFullscreen)
         {
             canvas.requestFullscreen()
-            console.log('go fullscreen')
         }
-        else
+        else if(canvas.webkitRequestFullscreen)
+        {
+            canvas.webkitRequestFullscreen()
+        }
+    }
+    else
+    {
+        if(document.exitFullscreen)
         {
             document.exitFullscreen()
-            console.log('exit fullscreen')
         }
-    })
-
+        else if(document.webkitExitFullscreen)
+        {
+            document.webkitExitFullscreen()
+        }
+    }
+})
 /**
  * Camera
  */
