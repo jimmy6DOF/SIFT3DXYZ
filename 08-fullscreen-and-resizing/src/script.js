@@ -27,6 +27,22 @@ const sizes = {
     height: window.innerHeight
 }
 
+//Resize
+window.addEventListener('resize', () => 
+{
+    //Update Sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight 
+
+    //Update Camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    //Update Renderer
+    renderer.setSize(sizes.width, sizes.height)
+
+})
+
 /**
  * Camera
  */
