@@ -2,7 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-console.log(OrbitControls)
+// console.log(OrbitControls)
 
 //Cursor
 const cursor = {
@@ -57,6 +57,11 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 
 // camera.position.y = 2
 camera.position.z = 3
 scene.add(camera)
+
+//Controls
+const controls = new OrbitControls(camera, canvas)
+// controls.target.y = 2
+// controls.update
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
