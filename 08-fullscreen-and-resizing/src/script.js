@@ -15,7 +15,7 @@ const scene = new THREE.Scene()
  * Object
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
@@ -42,8 +42,13 @@ window.addEventListener('resize', () =>
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-
 })
+
+    //Double CLick
+    window.addEventListener('dblclick', () =>
+    {
+        console.log('double click')
+    })
 
 /**
  * Camera
