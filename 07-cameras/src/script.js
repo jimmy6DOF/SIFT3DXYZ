@@ -1,5 +1,8 @@
 import './style.css'
 import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
+console.log(OrbitControls)
 
 //Cursor
 const cursor = {
@@ -64,6 +67,7 @@ renderer.setSize(sizes.width, sizes.height)
 // Animate
 const clock = new THREE.Clock()
 
+
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
@@ -72,10 +76,10 @@ const tick = () =>
     // mesh.rotation.y = elapsedTime;
 
     //Update camera (on each tick)
-    camera.position.x = Math.sin(cursor.x * Math.PI*2) * 3
-    camera.position.z = Math.cos(cursor.x * Math.PI*2) * 3
-    camera.position.y = cursor.y * 5
-    camera.lookAt(mesh.position)
+    // camera.position.x = Math.sin(cursor.x * Math.PI*2) * 3
+    // camera.position.z = Math.cos(cursor.x * Math.PI*2) * 3
+    // camera.position.y = cursor.y * 5
+    // camera.lookAt(mesh.position)
 
 
     // Render
