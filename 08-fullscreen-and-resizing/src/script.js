@@ -40,6 +40,8 @@ window.addEventListener('resize', () =>
 
     //Update Renderer
     renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
 
 })
 
@@ -62,7 +64,6 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
 renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 /**
  * Animate
@@ -81,6 +82,7 @@ const tick = () =>
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
+    
 }
 
 tick()
