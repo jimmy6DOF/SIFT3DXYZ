@@ -60,6 +60,7 @@ scene.add(camera)
 
 //Controls
 const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
 // controls.target.y = 2
 // controls.update
 
@@ -86,6 +87,8 @@ const tick = () =>
     // camera.position.y = cursor.y * 5
     // camera.lookAt(mesh.position)
 
+    //Update Controls *NEW*
+    controls.update()
 
     // Render
     renderer.render(scene, camera)
