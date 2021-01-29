@@ -36,6 +36,9 @@ gui
     .step(0.01)
     .name('elevation')
 
+gui
+    .add(mesh, 'visible')
+
 
 
 /**
