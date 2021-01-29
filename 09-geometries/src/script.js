@@ -48,7 +48,7 @@ const scene = new THREE.Scene()
 const geometry = new THREE.BufferGeometry()
 
 // Create 50 triangles (450 values)
-const count = 50
+const count = 900
 const positionsArray = new Float32Array(count * 3 * 3)
 for(let i = 0; i < count * 3 * 3; i++)
 {
