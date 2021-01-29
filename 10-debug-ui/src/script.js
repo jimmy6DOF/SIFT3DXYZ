@@ -4,7 +4,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // import gsap from 'gsap'
 import * as dat from 'dat.gui'
 
-//debug
+/***
+ *debug start
+ */
+
 const gui = new dat.GUI()
 
 
@@ -24,6 +27,9 @@ const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
+
+//debug Object
+gui.add(mesh.position, 'y')
 
 /**
  * Sizes
