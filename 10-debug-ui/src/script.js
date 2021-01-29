@@ -34,6 +34,7 @@ gui
     .min(-3)
     .max(3)
     .step(0.01)
+    .name('elevation')
 
 
 
