@@ -24,7 +24,7 @@ const scene = new THREE.Scene()
  * Object
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1, 6, 6, 6)
-const material = new THREE.MeshBasicMaterial({ color: 0x623cea, wireframe: true })
+const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
@@ -39,7 +39,8 @@ gui
 gui
     .add(mesh, 'visible')
 
-
+gui
+    .add(material, 'wireframe')
 
 /**
  * Sizes
