@@ -31,16 +31,20 @@ const scene = new THREE.Scene()
 // positionArray[7] = 0
 // positionArray[8] = 0
 
-const positionArray = new Float32Array([
-    0,0,0,
-    0,1,0,
-    1,0,0
-])
+//This renders one triangle based on the three vertices. 
 
-const positionAttribute = new THREE.BufferAttribute(positionArray, 3)
+// const positionArray = new Float32Array([
+//     0,0,0,
+//     0,1,0,
+//     1,0,0
+// ])
+
+// const positionAttribute = new THREE.BufferAttribute(positionArray, 3)
+
+// const geometry = new THREE.BufferGeometry()
+// geometry.setAttribute('position', positionAttribute)
 
 const geometry = new THREE.BufferGeometry()
-geometry.setAttribute('position', positionAttribute)
 
 
 const material = new THREE.MeshBasicMaterial({ 
