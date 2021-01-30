@@ -11,9 +11,22 @@ import * as dat from 'dat.gui'
 const gui = new dat.GUI()
 
 const parameters = {
-    color: 0x623cea
+    color: 0x623cea,
+    spin: () =>
+    {
+        console.log('spin')
+    }
 }
 
+gui
+    .addColor(parameters, 'color')
+    .onChange(() =>
+    {
+        material.color.set(parameters.color)
+    })
+
+gui
+    .add(parameters, 'spin')
 
 /**
  * Base
@@ -46,12 +59,6 @@ gui
 gui
     .add(material, 'wireframe')
 
-gui
-    .addColor(parameters, 'color')
-    .onChange(() =>
-    {
-        material.color.set(parameters.color)
-    })
 
 
 /**
