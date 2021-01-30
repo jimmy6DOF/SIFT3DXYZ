@@ -9,6 +9,8 @@ import * as dat from 'dat.gui'
  */
 
 const gui = new dat.GUI({ closed: true })
+    gui.hide()
+
 
 const parameters = {
     color: 0x623cea,
