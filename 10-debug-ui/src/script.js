@@ -1,7 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-// import gsap from 'gsap'
+import gsap from 'gsap'
 import * as dat from 'dat.gui'
 
 /***
@@ -14,7 +14,7 @@ const parameters = {
     color: 0x623cea,
     spin: () =>
     {
-        console.log('spin')
+        gsap.to(mesh.rotation, {duration: 1, y: 10})
     }
 }
 
