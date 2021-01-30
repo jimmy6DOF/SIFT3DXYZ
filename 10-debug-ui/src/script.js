@@ -10,6 +10,10 @@ import * as dat from 'dat.gui'
 
 const gui = new dat.GUI()
 
+const parameters = {
+    color: 0x623cea
+}
+
 
 /**
  * Base
@@ -23,7 +27,7 @@ const scene = new THREE.Scene()
 /**
  * Object
  */
-const geometry = new THREE.BoxGeometry(1, 1, 1, 6, 6, 6)
+const geometry = new THREE.BoxGeometry(1, 1, 1, 2, 2, 2)
 const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
@@ -41,6 +45,14 @@ gui
 
 gui
     .add(material, 'wireframe')
+
+gui
+    .addColor(parameters, 'color')
+    .onChange(() =>
+    {
+        material.color.set(parameters.color)
+    })
+
 
 /**
  * Sizes
