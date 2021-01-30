@@ -8,7 +8,7 @@ import * as dat from 'dat.gui'
  *debug start
  */
 
-const gui = new dat.GUI()
+const gui = new dat.GUI({ closed: true })
 
 const parameters = {
     color: 0x623cea,
