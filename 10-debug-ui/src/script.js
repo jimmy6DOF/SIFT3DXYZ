@@ -8,7 +8,7 @@ import * as dat from 'dat.gui'
  *debug start
  */
 
-const gui = new dat.GUI({ closed: true })
+const gui = new dat.GUI({ closed: true, width: 400 })
     gui.hide()
 
 
