@@ -31,10 +31,13 @@ const ambientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclus
 const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
 const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
 
-colorTexture.repeat.x = 2
-colorTexture.repeat.y = 3
+// colorTexture.repeat.x = 2
+// colorTexture.repeat.y = 3
 colorTexture.wrapS = THREE.MirroredRepeatWrapping
-colorTexture.wrapT = THREE.RepeatWrapping
+colorTexture.wrapT = THREE.MirroredRepeatWrapping
+
+colorTexture.offset.x = 0.5
+colorTexture.offset.y = 0.5
 
 /**
  * Base
