@@ -21,6 +21,7 @@ const loadingManager = new THREE.LoadingManager()
 //     console.log('loading error')
 // }
 
+//Import Textures
 const textureLoader = new THREE.TextureLoader(loadingManager)
 const colorTexture = textureLoader.load('/textures/door/color.jpg')
 const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
@@ -30,6 +31,10 @@ const ambientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclus
 const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
 const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
 
+colorTexture.repeat.x = 2
+colorTexture.repeat.y = 3
+colorTexture.wrapS = THREE.MirroredRepeatWrapping
+colorTexture.wrapT = THREE.RepeatWrapping
 
 /**
  * Base
@@ -44,7 +49,6 @@ const scene = new THREE.Scene()
  * Object
  */
 const geometry = new THREE.BoxBufferGeometry(1, 1, 1)
-console.log(geometry.attributes.uv)
 const material = new THREE.MeshBasicMaterial({ map: colorTexture })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
