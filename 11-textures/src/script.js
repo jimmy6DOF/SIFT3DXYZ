@@ -43,7 +43,8 @@ const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
 // colorTexture.center.x = 0.5
 // colorTexture.center.y = 0.5
 
-// colorTexture.minFilter = THREE.NearestFilter
+colorTexture.generateMipmaps = false
+colorTexture.minFilter = THREE.NearestFilter
 colorTexture.magFilter = THREE.NearestFilter
 
 /**
