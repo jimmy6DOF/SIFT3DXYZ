@@ -8,9 +8,17 @@ const image = new Image()
 image.onload = () =>
 {
     const texture = new THREE.Texture(image)
+    console.log(texture)
+
+    /**
+ * Object
+ */
+const geometry = new THREE.BoxGeometry(1, 1, 1)
+const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
+const mesh = new THREE.Mesh(geometry, material)
+scene.add(mesh)
 }
 image.src = '/textures/door/color.jpg'
-console.log(texture)
 
 
 /**
@@ -22,13 +30,7 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-/**
- * Object
- */
-const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0x623cea })
-const mesh = new THREE.Mesh(geometry, material)
-scene.add(mesh)
+
 
 /**
  * Sizes
