@@ -29,7 +29,7 @@ const scene = new THREE.Scene()
 /**
  * Objects
  */
-const material = new THREE.MeshBasicMaterial({ color: 0x623cea})
+const material = new THREE.MeshBasicMaterial({ map: doorColorTexture})
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
