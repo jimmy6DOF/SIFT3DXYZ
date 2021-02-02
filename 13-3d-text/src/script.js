@@ -57,11 +57,12 @@ fontLoader.load(
         )
         //Frustrum culling bounding box
         textGeometry.computeBoundingBox()
-        textGeometry.translate(
-            - (textGeometry.boundingBox.max.x - 0.02) * 0.5, // Subtract bevel size
-            - (textGeometry.boundingBox.max.y - 0.02) * 0.5, // Subtract bevel size
-            - (textGeometry.boundingBox.max.z - 0.03) * 0.5  // Subtract bevel thickness
-        )
+        // textGeometry.translate(
+        //     - (textGeometry.boundingBox.max.x - 0.02) * 0.5, // Subtract bevel size
+        //     - (textGeometry.boundingBox.max.y - 0.02) * 0.5, // Subtract bevel size
+        //     - (textGeometry.boundingBox.max.z - 0.03) * 0.5  // Subtract bevel thickness
+        // )
+        textGeometry.center()
         console.log(textGeometry.boundingBox)
 
         const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true })
