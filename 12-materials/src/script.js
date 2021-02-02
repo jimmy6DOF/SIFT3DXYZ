@@ -73,10 +73,12 @@ material.map = doorColorTexture
 material.aoMap = doorAmbientOcclusionTexture
 material.aoMapIntensity = 1
 
+
 //add to debug
 gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
 gui.add(material, 'aoMapIntensity').min(0).max(10).step(0.01)
+gui.add(material, 'wireframe')
 
 const sphere = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
