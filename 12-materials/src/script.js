@@ -73,6 +73,7 @@ material.map = doorColorTexture
 material.aoMap = doorAmbientOcclusionTexture
 material.aoMapIntensity = 1
 material.displacementMap = doorHeightTexture
+material.displacementScale = 0.05
 
 
 //add to debug
