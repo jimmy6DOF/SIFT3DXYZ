@@ -53,8 +53,13 @@ fontLoader.load(
         const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true })
         const text = new THREE.Mesh(textGeometry, textMaterial)
         scene.add(text)
+
+        //add to debug to toggle wireframe
+        gui.add(textMaterial, 'wireframe')
+
     }
 )
+
 
 
 /**
