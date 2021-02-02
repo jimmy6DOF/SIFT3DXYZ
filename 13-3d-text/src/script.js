@@ -57,6 +57,7 @@ fontLoader.load(
         )
         //Frustrum culling bounding box
         textGeometry.computeBoundingBox()
+        //test
         console.log(textGeometry.boundingBox)
 
         const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true })
