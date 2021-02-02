@@ -76,6 +76,7 @@ material.displacementMap = doorHeightTexture
 material.displacementScale = 0.05
 material.metalnessMap = doorMetalnessTexture
 material.roughnessMap = doorRoughnessTexture
+material.normalMap = doorNormalTexture
 
 
 //add to debug
