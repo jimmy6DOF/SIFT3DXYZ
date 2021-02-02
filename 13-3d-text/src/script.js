@@ -24,6 +24,7 @@ scene.add(axesHelper)
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
 
 /**
  * Object
@@ -62,15 +63,16 @@ fontLoader.load(
         //     - (textGeometry.boundingBox.max.y - 0.02) * 0.5, // Subtract bevel size
         //     - (textGeometry.boundingBox.max.z - 0.03) * 0.5  // Subtract bevel thickness
         // )
-        textGeometry.center()
-        console.log(textGeometry.boundingBox)
 
-        const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true })
+        //Easier way to center
+        textGeometry.center()
+
+        const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
         const text = new THREE.Mesh(textGeometry, textMaterial)
         scene.add(text)
 
-        //add to debug to toggle wireframe
-        gui.add(textMaterial, 'wireframe')
+        // //add to debug to toggle wireframe
+        // gui.add(textMaterial, 'wireframe')
 
     }
 )
