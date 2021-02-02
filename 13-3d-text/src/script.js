@@ -30,6 +30,16 @@ const cube = new THREE.Mesh(
 
 scene.add(cube)
 
+//Font
+const fontLoader = new THREE.FontLoader()
+fontLoader.load(
+    '/fonts/helvetiker_regular.typeface.json',
+    () =>
+    {
+        console.log('font loaded')
+    }
+)
+
 /**
  * Sizes
  */
