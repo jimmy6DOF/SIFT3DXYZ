@@ -67,13 +67,13 @@ const scene = new THREE.Scene()
 // material.gradientMap = gradientTexture
 
 const material = new THREE.MeshStandardMaterial()
-// material.roughness = 0.65
-// material.metalness = 0.45
+material.roughness = 0.65
+material.metalness = 0.45
+material.map = doorColorTexture
 
 //add to debug
 gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
-
 
 
 const sphere = new THREE.Mesh(
@@ -86,6 +86,7 @@ const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(1, 1),
     material
 )
+console.log(plane.geometry.attributes.uv)
 
 const torus = new THREE.Mesh(
     new THREE.TorusGeometry(0.3, 0.2, 16, 32),
