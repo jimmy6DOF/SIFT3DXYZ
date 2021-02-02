@@ -74,11 +74,12 @@ fontLoader.load(
         // //add to debug to toggle wireframe
         // gui.add(textMaterial, 'wireframe')
 
+        const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
+        const donutMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+
         for(let i = 0; i < 100; i++)
         {
             console.time('donut')
-            const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
-            const donutMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
             const donut = new THREE.Mesh(donutGeometry, donutMaterial)
             donut.position.x = (Math.random() - 0.5) * 10
             donut.position.y = (Math.random() - 0.5) * 10
