@@ -43,6 +43,7 @@ const scene = new THREE.Scene()
 // material.flatShading = true
 
 const material = new THREE.MeshMatcapMaterial()
+// https://github.com/nidorx/matcaps
 material.matcap = matcapTexture
 
 const sphere = new THREE.Mesh(
