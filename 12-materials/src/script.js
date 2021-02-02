@@ -50,6 +50,8 @@ const scene = new THREE.Scene()
 // const material = new THREE.MeshLambertMaterial()
 
 const material = new THREE.MeshPhongMaterial()
+material.shininess = 100
+material.specular = new THREE.Color(0x623cea)
 
 
 
@@ -79,7 +81,7 @@ scene.add(sphere, plane, torus)
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
 
-const pointLight = new THREE.PointLight(0xff00ff, 0.5)
+const pointLight = new THREE.PointLight(0xffffff, 0.5)
 pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
