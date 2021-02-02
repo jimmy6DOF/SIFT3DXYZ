@@ -74,6 +74,14 @@ fontLoader.load(
         // //add to debug to toggle wireframe
         // gui.add(textMaterial, 'wireframe')
 
+        for(let i = 0; i < 100; i++)
+        {
+            const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
+            const donutMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+            const donut = new THREE.Mesh(donutGeometry, donutMaterial)
+            scene.add(donut)
+        }
+
     }
 )
 
