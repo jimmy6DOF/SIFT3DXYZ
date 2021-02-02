@@ -67,19 +67,22 @@ const scene = new THREE.Scene()
 // material.gradientMap = gradientTexture
 
 const material = new THREE.MeshStandardMaterial()
-material.roughness = 0.65
-material.metalness = 0.45
+// material.roughness = 0.65
+// material.metalness = 0.45
 material.map = doorColorTexture
 material.aoMap = doorAmbientOcclusionTexture
 material.aoMapIntensity = 1
 material.displacementMap = doorHeightTexture
 material.displacementScale = 0.05
+material.metalnessMap = doorMetalnessTexture
+material.roughnessMap = doorRoughnessTexture
 
 
 //add to debug
 gui.add(material, 'metalness').min(0).max(1).step(0.0001)
 gui.add(material, 'roughness').min(0).max(1).step(0.0001)
-gui.add(material, 'aoMapIntensity').min(0).max(10).step(0.01)
+gui.add(material, 'aoMapIntensity').min(0).max(10).step(0.0001)
+gui.add(material, 'displacementScale').min(0).max(1).step(.0001)
 gui.add(material, 'wireframe')
 
 const sphere = new THREE.Mesh(
