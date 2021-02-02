@@ -19,6 +19,7 @@ const scene = new THREE.Scene()
 const axesHelper = new THREE.AxesHelper()
 scene.add(axesHelper)
 
+
 /**
  * Textures
  */
@@ -54,6 +55,10 @@ fontLoader.load(
                 bevelSegments: 4
             }
         )
+        //Frustrum culling bounding box
+        textGeometry.computeBoundingBox()
+        console.log(textGeometry.boundingBox)
+
         const textMaterial = new THREE.MeshBasicMaterial({ wireframe: true })
         const text = new THREE.Mesh(textGeometry, textMaterial)
         scene.add(text)
@@ -63,7 +68,6 @@ fontLoader.load(
 
     }
 )
-
 
 
 /**
@@ -96,7 +100,7 @@ window.addEventListener('resize', () =>
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 1
 camera.position.y = 1
-camera.position.z = 2
+camera.position.z = 4
 scene.add(camera)
 
 // Controls
