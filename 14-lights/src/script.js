@@ -61,6 +61,8 @@ window.requestAnimationFrame(() =>
 // Material
 const material = new THREE.MeshStandardMaterial()
 material.roughness = 0.4
+material.wireframe = false
+gui.add(material, 'wireframe')
 
 // Objects
 const sphere = new THREE.Mesh(
