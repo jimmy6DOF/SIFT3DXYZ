@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
+import { AmbientLight } from 'three'
 
 /**
  * Base
@@ -18,7 +19,8 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-
+const light = new THREE.AmbientLight(0x623cea, .4)
+scene.add(light)
 
 /**
  * Objects
