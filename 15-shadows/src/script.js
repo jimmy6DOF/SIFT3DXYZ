@@ -33,6 +33,7 @@ gui.add(directionalLight.position, 'z').min(- 5).max(5).step(0.001)
 scene.add(directionalLight)
 //active shadow
 directionalLight.castShadow = true
+console.log(directionalLight.shadow)
 
 /**
  * Materials
@@ -50,7 +51,6 @@ const sphere = new THREE.Mesh(
     material
 )
 sphere.castShadow = true
-sphere.position.x = -1
 
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),
