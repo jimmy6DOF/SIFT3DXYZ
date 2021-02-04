@@ -19,11 +19,16 @@ const scene = new THREE.Scene()
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0x623cea, .4)
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
+
+const directionalLight = new THREE.DirectionalLight(0x623cea, 0.3)
+directionalLight.position.set(1, 0.25, 0.4)
+scene.add(directionalLight)
 
 //debug UI
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
+gui.add(directionalLight, 'intensity').min(0).max(1).step(0.001)
 
 /**
  * Objects
