@@ -33,6 +33,8 @@ const pointLight = new THREE.PointLight(0xff9000, 0.5)
 pointLight.position.set(1, - 0.5, 1)
 scene.add(pointLight)
 
+const rectAreaLight = new THREE.RectAreaLight(0x4e00ff, 2, 1, 1)
+scene.add(rectAreaLight)
 
 //debug UI
 gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
