@@ -31,6 +31,8 @@ gui.add(directionalLight.position, 'x').min(- 5).max(5).step(0.001)
 gui.add(directionalLight.position, 'y').min(- 5).max(5).step(0.001)
 gui.add(directionalLight.position, 'z').min(- 5).max(5).step(0.001)
 scene.add(directionalLight)
+//active shadow
+directionalLight.castShadow = true
 
 /**
  * Materials
@@ -104,7 +106,8 @@ const renderer = new THREE.WebGLRenderer({
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.shadowMap = true
+renderer.shadowMap.enabled = true
+
 /**
  * Animate
  */
