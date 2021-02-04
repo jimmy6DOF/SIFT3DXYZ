@@ -47,6 +47,14 @@ gui.add(ambientLight, 'intensity').min(0).max(1).step(0.001)
 gui.add(directionalLight, 'intensity').min(0).max(1).step(0.001)
 gui.add(hemisphereLight, 'intensity').min(0).max(1).step(0.001)
 
+
+//helpers
+const spotLightHelper = new THREE.SpotLightHelper(spotLight)
+scene.add(spotLightHelper)
+window.requestAnimationFrame(() =>
+{
+    spotLightHelper.update()
+})
 /**
  * Objects
  */
