@@ -152,6 +152,10 @@ const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
 
+    // // Update donuts - doesn't work
+    // donut.rotation.x = 0.1 * elapsedTime
+    // donut.rotation.y = 0.15 * elapsedTime
+
     // Update controls
     controls.update()
 
