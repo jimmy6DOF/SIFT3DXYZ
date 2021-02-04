@@ -33,7 +33,9 @@ gui.add(directionalLight.position, 'z').min(- 5).max(5).step(0.001)
 scene.add(directionalLight)
 //active shadow
 directionalLight.castShadow = true
-console.log(directionalLight.shadow)
+//fix dimensions of shadowmap - must be factor of 2
+directionalLight.shadow.mapSize.width = 1024
+directionalLight.shadow.mapSize.height = 1024
 
 /**
  * Materials
