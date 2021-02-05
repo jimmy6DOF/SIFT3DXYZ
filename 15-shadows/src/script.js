@@ -61,6 +61,8 @@ spotLight.shadow.camera.fov = 30
 spotLight.position.set(0, 2, 2)
 scene.add(spotLight)
 scene.add(spotLight.target)
+spotLight.shadow.camera.near = 1
+spotLight.shadow.camera.far = 6
 
 const spotLightCameraHelper = new THREE.CameraHelper(spotLight.shadow.camera)
 scene.add(spotLightCameraHelper)
