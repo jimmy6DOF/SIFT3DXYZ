@@ -3,6 +3,18 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 
+
+
+/**
+ * Textures
+ */
+//add texture loader
+const textureLoader = new THREE.TextureLoader()
+//add baked texture
+const bakedShadow = textureLoader.load('/textures/bakedShadow.jpg')
+
+
+
 /**
  * Base
  */
@@ -106,7 +118,9 @@ sphere.castShadow = true
 
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),
-    material
+    new THREE.MeshBasicMaterial({
+        map: bakedShadow
+    })
 )
 plane.rotation.x = - Math.PI * 0.5
 plane.position.y = - 0.5
