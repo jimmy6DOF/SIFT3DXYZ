@@ -49,6 +49,18 @@ const directionalLightCameraHelper = new THREE.CameraHelper(directionalLight.sha
 directionalLightCameraHelper.visible = false
 scene.add(directionalLightCameraHelper)
 
+// Spot light
+const spotLight = new THREE.SpotLight(0xffffff, 0.4, 10, Math.PI * 0.3)
+//activate shadow on spotlight
+spotLight.castShadow = true
+//move spot light
+spotLight.position.set(0, 2, 2)
+scene.add(spotLight)
+scene.add(spotLight.target)
+
+const spotLightCameraHelper = new THREE.CameraHelper(spotLight.shadow.camera)
+scene.add(spotLightCameraHelper)
+
 /**
  * Materials
  */
