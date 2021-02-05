@@ -160,7 +160,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 //enable shadowmap inside of renderer
-renderer.shadowMap.enabled = true
+renderer.shadowMap.enabled = false
 //change shadowmap type algorithm
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
 /**
