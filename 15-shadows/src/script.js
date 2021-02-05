@@ -65,6 +65,7 @@ spotLight.shadow.camera.near = 1
 spotLight.shadow.camera.far = 6
 
 const spotLightCameraHelper = new THREE.CameraHelper(spotLight.shadow.camera)
+spotLightCameraHelper.visible = false
 scene.add(spotLightCameraHelper)
 
 /**
