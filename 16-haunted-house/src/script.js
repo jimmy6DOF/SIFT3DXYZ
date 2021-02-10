@@ -76,6 +76,14 @@ bush4.position.set(- 1, 0.05, 2.6)
 
 house.add(bush1, bush2, bush3, bush4)
 
+//Chimney
+const chimneyGeometry = new THREE.BoxGeometry(.8, 3, .8)
+const chimneyMaterial = new THREE.MeshStandardMaterial({ color: '#bf1363'})
+const chimney = new THREE.Mesh(chimneyGeometry, chimneyMaterial)
+chimney.position.set(-2.1, 1.5 )
+
+scene.add(chimney)
+
 // Yard
 const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20),
