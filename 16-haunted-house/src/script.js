@@ -92,10 +92,10 @@ const graveGeometry = new THREE.BoxGeometry(.6, .8, .2)
 const graveMaterial = new THREE.MeshStandardMaterial({ color: '#b2b6b1'})
 
 //add graves in random path around house (between 3 and 6)
-for(let i = 0; i < 50; i++)
+for(let i = 0; i < 65; i++)
 {
     const angle = Math.random() * Math.PI * 2 // Random angle
-    const radius = 3 + Math.random() * 6      // Random radius
+    const radius = 3 + Math.random() * 7      // Random radius
     const x = Math.cos(angle) * radius        // Get the x position using cosinus
     const z = Math.sin(angle) * radius        // Get the z position using sinus
 
