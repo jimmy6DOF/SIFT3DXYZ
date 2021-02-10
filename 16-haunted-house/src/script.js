@@ -82,7 +82,36 @@ const chimneyMaterial = new THREE.MeshStandardMaterial({ color: '#bf1363'})
 const chimney = new THREE.Mesh(chimneyGeometry, chimneyMaterial)
 chimney.position.set(-2.1, 1.5 )
 
-scene.add(chimney)
+house.add(chimney)
+
+//graves
+const graves = new THREE.Group()
+scene.add(graves)
+
+const graveGeometry = new THREE.BoxGeometry(.6, .8, .2)
+const graveMaterial = new THREE.MeshStandardMaterial({ color: '#b2b6b1'})
+
+//add graves in random path around house (between 3 and 6)
+for(let i = 0; i < 50; i++)
+{
+    const angle = Math.random() * Math.PI * 2 // Random angle
+    const radius = 3 + Math.random() * 6      // Random radius
+    const x = Math.cos(angle) * radius        // Get the x position using cosinus
+    const z = Math.sin(angle) * radius        // Get the z position using sinus
+
+    // Create the mesh
+    const grave = new THREE.Mesh(graveGeometry, graveMaterial)
+
+    // Position
+    grave.position.set(x, 0.3, z)                              
+
+    // Rotation
+    grave.rotation.z = (Math.random() - 0.5) * 0.4
+    grave.rotation.y = (Math.random() - 0.5) * 0.4
+
+    // Add to the graves container
+    graves.add(grave)
+}
 
 // Yard
 const floor = new THREE.Mesh(
