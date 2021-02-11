@@ -147,6 +147,7 @@ for(let i = 0; i < 65; i++)
     grave.rotation.y = (Math.random() - 0.5) * 0.4
 
     // Add to the graves container
+    grave.castShadow = true
     graves.add(grave)
 }
 
@@ -203,12 +204,6 @@ doorLight.position.set(0, 2.2, 2.7)
 house.add(doorLight)
 
 /**
- * Fog
- */
-const fog = new THREE.Fog('#262837', 1, 15)
-scene.fog = fog
-
-/**
  * Ghosts
  */
 const ghost1 = new THREE.PointLight('#ff00ff', 2, 3)
@@ -219,6 +214,13 @@ scene.add(ghost2)
 
 const ghost3 = new THREE.PointLight('#ffff00', 2, 3)
 scene.add(ghost3)
+
+/**
+ * Fog
+ */
+const fog = new THREE.Fog('#262837', 1, 15)
+scene.fog = fog
+
 
 /**
  * Window Sizes
@@ -266,6 +268,27 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setClearColor('#262837')
+
+/**
+ * Shadows
+ */
+renderer.shadowMap.enabled = true
+moonLight.castShadow = true
+doorLight.castShadow = true
+ghost1.castShadow = true
+ghost2.castShadow = true
+ghost3.castShadow = true
+
+walls.castShadow = true
+//roof shadows aren't necessary 
+// roof.castShadow = true
+bush1.castShadow = true
+bush2.castShadow = true
+bush3.castShadow = true
+bush4.castShadow = true
+//for the graves we have to go back to the loop itself 
+floor.receiveShadow = true
+
 
 /**
  * Animate
