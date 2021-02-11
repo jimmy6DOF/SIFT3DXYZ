@@ -288,6 +288,7 @@ bush3.castShadow = true
 bush4.castShadow = true
 //for the graves we have to go back to the loop itself 
 floor.receiveShadow = true
+walls.receiveShadow = true
 
 
 /**
