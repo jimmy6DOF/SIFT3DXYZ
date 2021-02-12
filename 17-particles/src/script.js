@@ -31,8 +31,8 @@ const particlesMaterial = new THREE.PointsMaterial({
     size: 0.02, 
     sizeAttenuation: true 
 })
-//Points
-const particles = new THREE.Mesh(particlesGeometry, particlesMaterial)
+// Points
+const particles = new THREE.Points(particlesGeometry, particlesMaterial)
 scene.add(particles)
 
 /**
