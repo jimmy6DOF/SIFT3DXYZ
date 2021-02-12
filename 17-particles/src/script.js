@@ -24,11 +24,24 @@ const textureLoader = new THREE.TextureLoader()
  * Particles
  */
 //Geometry
-const particlesGeometry = new THREE.SphereBufferGeometry(1, 32, 32)
+const particlesGeometry = new THREE.BufferGeometry()
+const count = 500
+
+const positions = new Float32Array(count * 3) // Multiply by 3 because each position is composed of 3 values (x, y, z)
+
+for(let i = 0; i , count * 3; i++) //Multiply these by 3 for the same reason xyz
+{
+    positions[i] = Math.random() //this will place the points randomly in the positive direction of x y and z starting at 0, 0 , 0 (meaning it will go up and to the right and expand)
+}
+
+particlesGeometry.setAttribute(
+    'position', 
+    new THREE.BufferAttribute(positions, 3) //assign positions const as an attribute, and then pass 3 again for the same reason xyz
+)
 
 //Material
 const particlesMaterial = new THREE.PointsMaterial({ 
-    size: 0.02, 
+    size: 0.01, 
     sizeAttenuation: true 
 })
 // Points
