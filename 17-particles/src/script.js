@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
+import { BoxBufferGeometry } from 'three'
 
 /**
  * Base
@@ -47,9 +48,17 @@ const particlesMaterial = new THREE.PointsMaterial({
     // alphaMap: particlesAlphaTexture,
     alphaMap: particleTexture,
     // alphaTest: 0.001
-    depthTest: false
-
+    // depthTest: false
+    depthWrite: false
 })
+//Cube
+const cube = new THREE.Mesh(
+    new THREE.BoxGeometry(),
+    new THREE.MeshBasicMaterial()
+)
+scene.add(cube)
+
+
 // Points
 const particles = new THREE.Points(particlesGeometry, particlesMaterial)
 scene.add(particles)
