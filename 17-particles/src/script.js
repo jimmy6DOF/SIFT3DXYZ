@@ -51,12 +51,12 @@ const particlesMaterial = new THREE.PointsMaterial({
     // depthTest: false
     depthWrite: false
 })
-//Cube
-const cube = new THREE.Mesh(
-    new THREE.BoxGeometry(),
-    new THREE.MeshBasicMaterial()
-)
-scene.add(cube)
+// //Cube
+// const cube = new THREE.Mesh(
+//     new THREE.BoxGeometry(),
+//     new THREE.MeshBasicMaterial()
+// )
+// scene.add(cube)
 
 
 // Points
