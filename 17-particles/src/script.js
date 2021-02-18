@@ -20,7 +20,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const particleTexture = textureLoader.load('/textures/particles/2.png')
+const particleTexture = textureLoader.load('/textures/particles/4.png')
 // const particlesAlphaTexture = textureLoader.load('/textures/particles/2.png')
 
 /**
@@ -28,7 +28,7 @@ const particleTexture = textureLoader.load('/textures/particles/2.png')
  */
 //Geometry
 const particlesGeometry = new THREE.BufferGeometry()
-const count = 500
+const count = 5000
 
 const positions = new Float32Array(count * 3) // Multiply by 3 because each position is composed of 3 values (x, y, z)
 const colors = new Float32Array(count * 3) // Multiply by three because each position is composed of RGB 3 values
@@ -119,6 +119,9 @@ const clock = new THREE.Clock()
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
+
+    //Update Particles
+    particles.scale.z = elapsedTime * 0.2
 
     // Update controls
     controls.update()
