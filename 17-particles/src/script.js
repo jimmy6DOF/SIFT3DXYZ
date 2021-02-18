@@ -31,25 +31,29 @@ const particlesGeometry = new THREE.BufferGeometry()
 const count = 500
 
 const positions = new Float32Array(count * 3) // Multiply by 3 because each position is composed of 3 values (x, y, z)
+const colors = new Float32Array(count * 3) // Multiply by three because each position is composed of RGB 3 values
 
 for(let i = 0; i < count * 3; i++) // Multiply by 3 for same reason
 {
     positions[i] = (Math.random() - 0.5) * 10// Math.random() - 0.5 to have a random value between -0.5 and +0.5
+    colors[i] = Math.random() // Math.random() random colors with random numbers for RGB (xyz) between 0 and 1
 }
 
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3)) // Create the Three.js BufferAttribute and specify that each information is composed of 3 values
+particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3)) // "Vertex Colors" Set attribute called color and pass in the colors array as the bugger attribute, and specify 3 values RGB
 
 //Material
 const particlesMaterial = new THREE.PointsMaterial({ 
     size: 0.2, 
     sizeAttenuation: true,
-    color: new THREE.Color('#623cea'),
+    // color: new THREE.Color('#623cea'),
     transparent: true,
     // alphaMap: particlesAlphaTexture,
     alphaMap: particleTexture,
     // alphaTest: 0.001
     // depthTest: false
-    depthWrite: false
+    depthWrite: false,
+    vertexColors: true
 })
 // //Cube
 // const cube = new THREE.Mesh(
