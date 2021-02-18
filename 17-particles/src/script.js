@@ -20,7 +20,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const particleTexture = textureLoader.load('/textures/particles/4.png')
+const particleTexture = textureLoader.load('/textures/particles/2.png')
 // const particlesAlphaTexture = textureLoader.load('/textures/particles/2.png')
 
 /**
@@ -121,7 +121,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     //Update Particles
-    particles.scale.z = elapsedTime * 0.2
+    particles.rotation.y = elapsedTime * 0.2
 
     // Update controls
     controls.update()
