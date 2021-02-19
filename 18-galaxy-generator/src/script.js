@@ -54,7 +54,7 @@ if(points !== null)
         const i3 = i * 3
 
         const radius = Math.random() * parameters.radius
-        const branchAngle = (i % parameters.branches) / parameters.branches //0, 1, 2, n, 0, 1, ...
+        const branchAngle = (i % parameters.branches) / parameters.branches * Math.PI * 2
 
         //much safer way to log something like this (saves your RAM to set an i limit on logging)
         if(i < 20)
@@ -62,9 +62,9 @@ if(points !== null)
             console.log(i, branchAngle)
         }
 
-        positions[i3    ] = radius
+        positions[i3    ] = Math.cos(branchAngle) * radius
         positions[i3 + 1] = 0
-        positions[i3 + 2] = 0
+        positions[i3 + 2] = Math.sin(branchAngle) * radius
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
