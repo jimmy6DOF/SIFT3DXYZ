@@ -36,23 +36,29 @@ const generateGalaxy = () =>
     {
         const i3 = i * 3
 
-        positions[i3    ] = (Math.random() - 0.5) * 3 //positions of x
-        positions[i3 + 1] = (Math.random() - 0.5) * 3 //positions of y
-        positions[i3 + 2] = (Math.random() - 0.5) * 3 //positions of z
+        positions[i3    ] = (Math.random() - 0.5) * 3 //positions of x minus 0.5 to center 
+        positions[i3 + 1] = (Math.random() - 0.5) * 3 //positions of y minus 0.5 to center 
+        positions[i3 + 2] = (Math.random() - 0.5) * 3 //positions of z minus 0.5 to center 
     }
-    console.log(positions)
+    // console.log(positions)
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
     /**
      * Material
      */
-    const Material = new THREE.PointsMaterial({
+    const material = new THREE.PointsMaterial({
         size: parameters.size, 
         sizeAttenuation: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending
     })
+
+    /**
+     * Points
+     */
+    const points = new THREE.Points(geometry, material)
+    scene.add(points)
 }
 
 generateGalaxy()
