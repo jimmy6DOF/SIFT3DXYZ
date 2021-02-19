@@ -22,6 +22,7 @@ const scene = new THREE.Scene()
 const parameters = {}
 parameters.count = 10000
 parameters.size = 0.01
+parameters.radius = 5
 
 let geometry = null
 let material = null
@@ -51,9 +52,11 @@ if(points !== null)
     {
         const i3 = i * 3
 
-        positions[i3    ] = (Math.random() - 0.5) * 3 //positions of x minus 0.5 to center 
-        positions[i3 + 1] = (Math.random() - 0.5) * 3 //positions of y minus 0.5 to center 
-        positions[i3 + 2] = (Math.random() - 0.5) * 3 //positions of z minus 0.5 to center 
+        const radius = Math.random() * parameters.radius
+
+        positions[i3    ] = radius
+        positions[i3 + 1] = 0
+        positions[i3 + 2] = 0
     }
     // console.log(positions)
 
@@ -81,6 +84,7 @@ generateGalaxy()
 //debug gui loads generateGalaxy after it is instantiated else you get an error.
 gui.add(parameters, 'count').min(100).max(1000000).step(100).onFinishChange(generateGalaxy)
 gui.add(parameters, 'size').min(.001).max(.1).step(.001).onFinishChange(generateGalaxy)
+gui.add(parameters, 'radius').min(.01).max(20).step(.001).onFinishChange(generateGalaxy)
 
 
 /**
