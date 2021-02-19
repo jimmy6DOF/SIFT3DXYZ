@@ -54,8 +54,9 @@ if(points !== null)
         const i3 = i * 3
 
         const radius = Math.random() * parameters.radius
-        const branchAngle = i % parameters.branches //0, 1, 2, n, 0, 1, ...
+        const branchAngle = (i % parameters.branches) / parameters.branches //0, 1, 2, n, 0, 1, ...
 
+        //much safer way to log something like this (saves your RAM to set an i limit on logging)
         if(i < 20)
         {
             console.log(i, branchAngle)
