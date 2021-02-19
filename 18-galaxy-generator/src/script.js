@@ -57,10 +57,10 @@ if(points !== null)
         const branchAngle = (i % parameters.branches) / parameters.branches * Math.PI * 2
 
         //much safer way to log something like this (saves your RAM to set an i limit on logging)
-        if(i < 20)
-        {
-            console.log(i, branchAngle)
-        }
+        // if(i < 20)
+        // {
+        //     console.log(i, branchAngle)
+        // }
 
         positions[i3    ] = Math.cos(branchAngle) * radius
         positions[i3 + 1] = 0
