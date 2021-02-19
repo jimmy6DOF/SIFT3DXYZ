@@ -18,9 +18,28 @@ const scene = new THREE.Scene()
 /**
  * Galaxy
  */
+
+const parameters = {}
+parameters.count = 10000
+
+
 const generateGalaxy = () =>
 {
-    console.log('generate the galaxy')
+    const geometry = new THREE.BufferGeometry()
+
+    const positions = new Float32Array(parameters.count * 3) //multiply by three for each vertex xyz
+
+    for(let i = 0; i < parameters.count; i++)
+    {
+        const i3 = i * 3
+
+        positions[i3 + 0] = Math.random()
+        positions[i3 + 1] = Math.random()
+        positions[i3 + 2] = Math.random()
+
+    }
+    
+    console.log(positions)
 }
 
 generateGalaxy()
