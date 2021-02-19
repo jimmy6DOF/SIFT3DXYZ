@@ -7,7 +7,7 @@ import * as dat from 'dat.gui'
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+const gui = new dat.GUI({ width: 320 })
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -22,6 +22,7 @@ const scene = new THREE.Scene()
 const parameters = {}
 parameters.count = 1000
 parameters.size = 0.02
+
 
 const generateGalaxy = () =>
 {
@@ -62,6 +63,11 @@ const generateGalaxy = () =>
 }
 
 generateGalaxy()
+
+//debug gui loads generateGalaxy after it is instantiated else you get an error.
+gui.add(parameters, 'count').min(100).max(1000000).step(100).onFinishChange(generateGalaxy)
+gui.add(parameters, 'size').min(.001).max(.1).step(.001).onFinishChange(generateGalaxy)
+
 
 /**
  * Sizes
