@@ -54,12 +54,17 @@ if(points !== null)
         const i3 = i * 3
 
         const radius = Math.random() * parameters.radius
+        const branchAngle = i % parameters.branches //0, 1, 2, n, 0, 1, ...
+
+        if(i < 20)
+        {
+            console.log(i, branchAngle)
+        }
 
         positions[i3    ] = radius
         positions[i3 + 1] = 0
         positions[i3 + 2] = 0
     }
-    // console.log(positions)
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
