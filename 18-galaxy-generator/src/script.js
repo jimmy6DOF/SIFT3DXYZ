@@ -25,6 +25,7 @@ parameters.size = 0.01
 parameters.radius = 5
 parameters.branches = 3
 parameters.spin = 1
+parameters.randomness = 0.2
 
 let geometry = null
 let material = null
@@ -64,9 +65,13 @@ if(points !== null)
         //     console.log(i, branchAngle)
         // }
 
-        positions[i3    ] = Math.cos(branchAngle + spinAngle) * radius
-        positions[i3 + 1] = 0
-        positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius
+        const randomX = Math.random() * parameters.randomness
+        const randomY = Math.random() * parameters.randomness
+        const randomZ = Math.random() * parameters.randomness
+
+        positions[i3    ] = Math.cos(branchAngle + spinAngle) * radius + randomX
+        positions[i3 + 1] = randomY
+        positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
@@ -96,6 +101,7 @@ gui.add(parameters, 'size').min(.001).max(.1).step(.001).onFinishChange(generate
 gui.add(parameters, 'radius').min(.01).max(20).step(.001).onFinishChange(generateGalaxy)
 gui.add(parameters, 'branches').min(1).max(20).step(1).onFinishChange(generateGalaxy)
 gui.add(parameters, 'spin').min(-5).max(5).step(0.001).onFinishChange(generateGalaxy)
+gui.add(parameters, 'randomness').min(0).max(2).step(0.001).onFinishChange(generateGalaxy)
 
 
 /**
