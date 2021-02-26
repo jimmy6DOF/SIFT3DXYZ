@@ -109,15 +109,10 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     //Animate objects
-    object1.position.x = Math.sin(elapsedTime - 0.5)  * 0.5
-    object1.position.y = Math.cos(elapsedTime - 0.5 * 0.2)  * 1.5
-    object1.position.z = Math.sin(elapsedTime - 0.5 * 0.1)  * 0.5
-    object2.position.x = Math.sin(elapsedTime - 0.5 * 0.2)  * 0.5
-    object2.position.y = Math.cos(elapsedTime - 0.5 * 0.3)  * 1.5
-    object2.position.y = Math.sin(elapsedTime - 0.5)  * 1.5
-    object3.position.x = Math.sin(elapsedTime - 0.5 * 0.1)  * 0.5
-    object3.position.y = Math.sin(elapsedTime - 0.5 * 0.3)  * 0.5
-    object3.position.z = Math.cos(elapsedTime - 0.5 * 0.3)  * 1.5
+    object1.position.y = Math.sin(elapsedTime * 0.3)  * 1.5
+    object2.position.y = Math.cos(elapsedTime * 0.3)  * 1.5
+    object3.position.y = Math.sin(elapsedTime * 0.3)  * 1.5
+    
 
     // Update controls
     controls.update()
