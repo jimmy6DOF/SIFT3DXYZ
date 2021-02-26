@@ -31,7 +31,7 @@ const object2 = new THREE.Mesh(
 
 const object3 = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
-    new THREE.MeshBasicMaterial({ color: '#3c3c3c'})
+    new THREE.MeshBasicMaterial({ color: '#3c3c3c' })
 )
 object3.position.x = 2
 
@@ -124,6 +124,12 @@ const tick = () =>
     const intersects = raycaster.intersectObjects(objectsToTest)
     // console.log(intersects)
 
+    //before changing to blue we will loop red 
+    for(const object of objectsToTest)
+    {
+        object.material.color.set('#623cea')
+    }
+    
     for(const intersect of intersects)
     {
         intersect.object.material.color.set('#0000ff')
