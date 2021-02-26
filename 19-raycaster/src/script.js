@@ -31,7 +31,7 @@ const object2 = new THREE.Mesh(
 
 const object3 = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
-    new THREE.MeshNormalMaterial()
+    new THREE.MeshBasicMaterial({ color: '#3c3c3c'})
 )
 object3.position.x = 2
 
@@ -113,15 +113,16 @@ const tick = () =>
     object2.position.y = Math.cos(elapsedTime * 0.8)  * 1.5
     object3.position.y = Math.sin(elapsedTime * 1.4)  * 1.5
 
-    //Cast a Ray
-    const rayOrigin = new THREE.Vector3(-3, 0, 0)
+    // Cast a ray
+    const rayOrigin = new THREE.Vector3(- 3, 0, 0)
     const rayDirection = new THREE.Vector3(1, 0, 0)
     rayDirection.normalize()
 
     raycaster.set(rayOrigin, rayDirection)
-    
+
     const objectsToTest = [object1, object2, object3]
     const intersects = raycaster.intersectObjects(objectsToTest)
+    // console.log(intersects)
 
     for(const intersect of intersects)
     {
