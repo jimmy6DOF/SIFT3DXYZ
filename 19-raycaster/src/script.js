@@ -9,8 +9,6 @@ import * as dat from 'dat.gui'
 // Debug
 const gui = new dat.GUI()
 
-console.log(THREE.version())
-
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
@@ -38,6 +36,13 @@ const object3 = new THREE.Mesh(
 object3.position.x = 2
 
 scene.add(object1, object2, object3)
+
+/**
+ * Raycaster
+ */
+
+const raycaster = new THREE.Raycaster()
+console.log(raycaster)
 
 /**
  * Sizes
