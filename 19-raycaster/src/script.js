@@ -45,7 +45,9 @@ const raycaster = new THREE.Raycaster()
 
 const rayOrigin = new THREE.Vector3(-3, 0, 0)
 const rayDirection = new THREE.Vector3(10, 0, 0)
+console.log(rayDirection.length())
 rayDirection.normalize()
+console.log(rayDirection.length())
 raycaster.set(rayOrigin, rayDirection)
 
 /**
