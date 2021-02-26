@@ -20,18 +20,18 @@ const scene = new THREE.Scene()
  */
 const object1 = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
-    new THREE.MeshBasicMaterial({ color: '#ff0000' })
+    new THREE.MeshBasicMaterial({ color: '#bf1363' })
 )
 object1.position.x = - 2
 
 const object2 = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
-    new THREE.MeshBasicMaterial({ color: '#ff0000' })
+    new THREE.MeshBasicMaterial({ color: '#623cea' })
 )
 
 const object3 = new THREE.Mesh(
     new THREE.SphereGeometry(0.5, 16, 16),
-    new THREE.MeshBasicMaterial({ color: '#ff0000' })
+    new THREE.MeshNormalMaterial()
 )
 object3.position.x = 2
 
@@ -110,9 +110,19 @@ const tick = () =>
 
     //Animate objects
     object1.position.y = Math.sin(elapsedTime * 0.3)  * 1.5
-    object2.position.y = Math.cos(elapsedTime * 0.3)  * 1.5
-    object3.position.y = Math.sin(elapsedTime * 0.3)  * 1.5
+    object2.position.y = Math.cos(elapsedTime * 0.8)  * 1.5
+    object3.position.y = Math.sin(elapsedTime * 1.4)  * 1.5
+
+    //Cast a Ray
+    const rayOrigin = new THREE.Vector3(-3, 0, 0)
+    const rayDirection = new THREE.Vector3(10, 0, 0)
+    rayDirection.normalize()
+
+    raycaster.set(rayOrigin, rayDirection)
     
+    const objectsToTest = [object1, object2, object3]
+    const intersects = raycaster.intersectObjects(objectsToTest)
+    console.log(intersects.length)
 
     // Update controls
     controls.update()
