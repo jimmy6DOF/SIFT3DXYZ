@@ -115,14 +115,18 @@ const tick = () =>
 
     //Cast a Ray
     const rayOrigin = new THREE.Vector3(-3, 0, 0)
-    const rayDirection = new THREE.Vector3(10, 0, 0)
+    const rayDirection = new THREE.Vector3(1, 0, 0)
     rayDirection.normalize()
 
     raycaster.set(rayOrigin, rayDirection)
     
     const objectsToTest = [object1, object2, object3]
     const intersects = raycaster.intersectObjects(objectsToTest)
-    console.log(intersects.length)
+
+    for(const intersect of intersects)
+    {
+        intersect.object.material.color.set('#0000ff')
+    }
 
     // Update controls
     controls.update()
