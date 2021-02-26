@@ -43,12 +43,17 @@ scene.add(object1, object2, object3)
 
 const raycaster = new THREE.Raycaster()
 
-const rayOrigin = new THREE.Vector3(-3, 0, 0)
-const rayDirection = new THREE.Vector3(10, 0, 0)
-console.log(rayDirection.length())
-rayDirection.normalize()
-console.log(rayDirection.length())
-raycaster.set(rayOrigin, rayDirection)
+//method 1
+// const rayOrigin = new THREE.Vector3(-3, 0, 0)
+// const rayDirection = new THREE.Vector3(10, 0, 0)
+// rayDirection.normalize()
+// raycaster.set(rayOrigin, rayDirection)
+
+// const intersect = raycaster.intersectObject(object2)
+// console.log(intersect)
+
+// const intersects = raycaster.intersectObjects([object1, object2, object3])
+// console.log(intersects)
 
 /**
  * Sizes
@@ -102,6 +107,17 @@ const clock = new THREE.Clock()
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
+
+    //Animate objects
+    object1.position.x = Math.sin(elapsedTime * 0.3) - 0.5 * 1.5
+    object1.position.y = Math.sin(elapsedTime * 0.3) - 0.5 * 1.5
+    object1.position.z = Math.sin(elapsedTime * 0.3) - 0.5 * 1.5
+    object2.position.x = Math.sin(elapsedTime * 0.3) - 0.5 * 1.5
+    object2.position.y = Math.sin(elapsedTime * 0.3) - 0.5 * 1.5
+    object2.position.y = Math.sin(elapsedTime * 0.8) - 0.5 * 1.5
+    object3.position.x = Math.sin(elapsedTime * 0.8) - 0.5 * 1.5
+    object3.position.y = Math.sin(elapsedTime * 1.3) - 0.5 * 1.5
+    object3.position.z = Math.sin(elapsedTime * 1.3) - 0.5 * 1.5
 
     // Update controls
     controls.update()
