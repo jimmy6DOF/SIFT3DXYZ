@@ -88,7 +88,7 @@ window.addEventListener('mousemove', (event) =>
     mouse.x = event.clientX / sizes.width * 2 - 1
     mouse.y = - (event.clientY / sizes.height * 2 - 1)
 
-    console.log(mouse)
+    // console.log(mouse)
 })
 
 /**
@@ -126,27 +126,22 @@ const tick = () =>
     object2.position.y = Math.cos(elapsedTime * 0.8)  * 1.5
     object3.position.y = Math.sin(elapsedTime * 1.4)  * 1.5
 
-    // // Cast a ray
-    // const rayOrigin = new THREE.Vector3(- 3, 0, 0)
-    // const rayDirection = new THREE.Vector3(1, 0, 0)
-    // rayDirection.normalize()
+    // Cast a ray
+    raycaster.setFromCamera(mouse, camera)
 
-    // raycaster.set(rayOrigin, rayDirection)
+    const objectsToTest = [object1, object2, object3]
+    const intersects = raycaster.intersectObjects(objectsToTest)
 
-    // const objectsToTest = [object1, object2, object3]
-    // const intersects = raycaster.intersectObjects(objectsToTest)
-    // // console.log(intersects)
-
-    // //before changing to blue we will loop red 
-    // for(const object of objectsToTest)
-    // {
-    //     object.material.color.set('#623cea')
-    // }
-    
-    // for(const intersect of intersects)
-    // {
-    //     intersect.object.material.color.set('#bf1363')
-    // }
+    //before changing to blue we will loop blurple 
+    for(const object of objectsToTest)
+    {
+        object.material.color.set('#623cea')
+    }
+    //On hover, material changes to pink
+    for(const intersect of intersects)
+    {
+        intersect.object.material.color.set('#bf1363')
+    }
 
     // Update controls
     controls.update()
