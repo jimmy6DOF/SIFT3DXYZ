@@ -87,8 +87,15 @@ window.addEventListener('mousemove', (event) =>
 {
     mouse.x = event.clientX / sizes.width * 2 - 1
     mouse.y = - (event.clientY / sizes.height * 2 - 1)
-
     // console.log(mouse)
+})
+
+window.addEventListener('click', () =>
+{
+if(currentIntersect)
+{
+    console.log('clicked sphere')
+}
 })
 
 /**
