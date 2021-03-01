@@ -94,7 +94,18 @@ window.addEventListener('click', () =>
 {
 if(currentIntersect)
 {
-    console.log('clicked sphere')
+    if(currentIntersect.object === object1)
+    {
+        console.log('clicked object 1')
+    }
+    else if(currentIntersect.object === object2)
+    {
+        console.log('clicked object 2')
+    }
+    else if(currentIntersect.object === object3)
+    {
+        console.log('clicked object 3')
+    }
 }
 })
 
