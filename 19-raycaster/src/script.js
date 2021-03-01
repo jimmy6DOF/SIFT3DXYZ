@@ -94,18 +94,18 @@ window.addEventListener('click', () =>
 {
 if(currentIntersect)
 {
-    if(currentIntersect.object === object1)
+    switch(currentIntersect.object)
     {
-        console.log('clicked object 1')
-    }
-    else if(currentIntersect.object === object2)
-    {
-        console.log('clicked object 2')
-    }
-    else if(currentIntersect.object === object3)
-    {
-        console.log('clicked object 3')
-    }
+        case object1:
+            console.log('clicked object 1')
+            break
+        case object2:
+            console.log('clicked object 2')
+            break
+        case object3:
+            console.log('clicked object 3')
+            break
+        }
 }
 })
 
