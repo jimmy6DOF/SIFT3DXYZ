@@ -2,7 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
-import CANNON from 'cannon'
+import CANNON, { Shape } from 'cannon'
 
 
 /**
@@ -37,10 +37,19 @@ const environmentMapTexture = cubeTextureLoader.load([
 /**
  * Physics
  */
+//world
 const world = new CANNON.World()
 world.gravity.set(0, -9.82, 0)
 
 //add sphere to physics world
+const sphereShape = new CANNON.Sphere(0.5)
+const sphereBody = new CANNON.Body({
+    mass: 1,
+    position: new CANNON.Vec3(0, 3, 0),
+    shape: sphereShape
+})
+world.addBody(sphereBody)
+
 
 
 /**
