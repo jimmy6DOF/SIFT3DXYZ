@@ -40,6 +40,9 @@ const environmentMapTexture = cubeTextureLoader.load([
 const world = new CANNON.World()
 world.gravity.set(0, -9.82, 0)
 
+//add sphere to physics world
+
+
 /**
  * Test sphere
  */
@@ -61,7 +64,7 @@ scene.add(sphere)
 const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(10, 10),
     new THREE.MeshStandardMaterial({
-        color: '#777777',
+        color: '#623cea',
         metalness: 0.3,
         roughness: 0.4,
         envMap: environmentMapTexture
