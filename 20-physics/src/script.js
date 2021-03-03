@@ -162,9 +162,10 @@ const tick = () =>
     // update physics world
     world.step(1/60, deltaTime, 3)
     //connect three sphere to cannon sphere
-    sphere.position.x = sphereBody.position.x
-    sphere.position.y = sphereBody.position.y
-    sphere.position.z = sphereBody.position.z
+    sphere.position.copy(sphereBody.position)
+    // sphere.position.x = sphereBody.position.x
+    // sphere.position.y = sphereBody.position.y
+    // sphere.position.z = sphereBody.position.z
     // console.log(sphereBody.position)
 
     // Update controls
