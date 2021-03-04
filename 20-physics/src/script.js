@@ -41,6 +41,10 @@ const environmentMapTexture = cubeTextureLoader.load([
 const world = new CANNON.World()
 world.gravity.set(0, -9.82, 0)
 
+// Materials 
+concreteMaterial = new CANNON.Material('concrete')
+plasticMaterial = new CANNON.Material('plastic')
+
 //add sphere to physics world
 const sphereShape = new CANNON.Sphere(0.5)
 const sphereBody = new CANNON.Body({
