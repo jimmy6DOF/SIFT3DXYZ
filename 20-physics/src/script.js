@@ -66,7 +66,8 @@ const sphereBody = new CANNON.Body({
     shape: sphereShape,
     // material: defaultMaterial
 })
-sphereBody.applyLocalForce(new CANNON.Vec3(150, 0, 0), new CANNON.Vec3(0, 0, 0))
+sphereBody.applyLocalForce(new CANNON.Vec3(100, 0, 0), 
+new CANNON.Vec3(0, 0, 0))
 world.addBody(sphereBody)
 
 //floor in physics world
@@ -194,7 +195,9 @@ const tick = () =>
     world.step(1/60, deltaTime, 3)
     //connect three sphere to cannon sphere
     sphere.position.copy(sphereBody.position)
-    camera.position.x = sphere.position.x + 3
+    // camera.position.x = sphere.position.x + 6
+    // camera.position.z = sphere.position.x * .19
+    // camera.position.z = sphere.position.x * .7
     // sphere.position.x = sphereBody.position.x
     // sphere.position.y = sphereBody.position.y
     // sphere.position.z = sphereBody.position.z
