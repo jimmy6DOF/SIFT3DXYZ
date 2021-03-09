@@ -212,11 +212,10 @@ const createSphere = (radius, position)=>
 
     //Save in objects to update
     objectsToUpdate.push({
-        mesh: mesh,
-        body: body
+        mesh,
+        body
     })
 }
-console.log(objectsToUpdate)
 
 createSphere(0.5, { x: 0, y: 3, z: 0 })
 createSphere(0.5, { x: 0, y: 3, z: 0 })
@@ -238,15 +237,12 @@ const tick = () =>
 
     // update physics world
     world.step(1/60, deltaTime, 3)
-    //connect three sphere to cannon sphere
-    // sphere.position.copy(sphereBody.position)
-    // camera.position.x = sphere.position.x + 6
-    // camera.position.z = sphere.position.x * .19
-    // camera.position.z = sphere.position.x * .7
-    // sphere.position.x = sphereBody.position.x
-    // sphere.position.y = sphereBody.position.y
-    // sphere.position.z = sphereBody.position.z
-    // console.log(sphereBody.position)
+
+    for(const object of objectsToUpdate)
+    {
+        object.mesh.position.copy(object.body.position)
+    }
+
 
     // Update controls
     controls.update()
