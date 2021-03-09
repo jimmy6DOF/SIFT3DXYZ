@@ -58,17 +58,17 @@ const defaultContactMaterial = new CANNON.ContactMaterial(
 world.addContactMaterial(defaultContactMaterial)
 world.defaultContactMaterial = defaultContactMaterial
 
-//add sphere to physics world
-const sphereShape = new CANNON.Sphere(0.5)
-const sphereBody = new CANNON.Body({
-    mass: 1,
-    position: new CANNON.Vec3(0, 3, 0),
-    shape: sphereShape,
-    // material: defaultMaterial
-})
-sphereBody.applyLocalForce(new CANNON.Vec3(100, 0, 0), 
-new CANNON.Vec3(0, 0, 0))
-world.addBody(sphereBody)
+// //add sphere to physics world
+// const sphereShape = new CANNON.Sphere(0.5)
+// const sphereBody = new CANNON.Body({
+//     mass: 1,
+//     position: new CANNON.Vec3(0, 3, 0),
+//     shape: sphereShape,
+//     // material: defaultMaterial
+// })
+// sphereBody.applyLocalForce(new CANNON.Vec3(100, 0, 0), 
+// new CANNON.Vec3(0, 0, 0))
+// world.addBody(sphereBody)
 
 //floor in physics world
 const floorShape = new CANNON.Plane()
@@ -84,20 +84,20 @@ world.addBody(floorBody)
 
 
 
-/**
- * Test sphere
- */
-const sphere = new THREE.Mesh(
-    new THREE.SphereGeometry(0.5, 32, 32),
-    new THREE.MeshStandardMaterial({
-        metalness: 0.3,
-        roughness: 0.4,
-        envMap: environmentMapTexture
-    })
-)
-sphere.castShadow = true
-sphere.position.y = 0.5
-scene.add(sphere)
+// /**
+//  * Test sphere
+//  */
+// const sphere = new THREE.Mesh(
+//     new THREE.SphereGeometry(0.5, 32, 32),
+//     new THREE.MeshStandardMaterial({
+//         metalness: 0.3,
+//         roughness: 0.4,
+//         envMap: environmentMapTexture
+//     })
+// )
+// sphere.castShadow = true
+// sphere.position.y = 0.5
+// scene.add(sphere)
 
 /**
  * Floor
@@ -190,11 +190,12 @@ const tick = () =>
     const deltaTime = elapsedTime - oldElapsedTime
     oldElapsedTime = elapsedTime
 
+    // sphereBody.applyForce(new CANNON.Vec3(- 0.5, 0, 0), sphereBody.position)
 
     // update physics world
     world.step(1/60, deltaTime, 3)
     //connect three sphere to cannon sphere
-    sphere.position.copy(sphereBody.position)
+    // sphere.position.copy(sphereBody.position)
     // camera.position.x = sphere.position.x + 6
     // camera.position.z = sphere.position.x * .19
     // camera.position.z = sphere.position.x * .7
