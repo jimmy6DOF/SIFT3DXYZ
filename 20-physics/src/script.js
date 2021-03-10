@@ -3,13 +3,20 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import CANNON, { Shape } from 'cannon'
-import { SphereGeometry } from 'three'
+import { AnimationObjectGroup, SphereGeometry } from 'three'
 
 
 /**
  * Debug
  */
 const gui = new dat.GUI()
+const debugObject = {}
+
+debugObject.createSphere = () =>
+{
+    console.log('created sphere')
+}
+gui.add(debugObject, 'createSphere')
 
 /**
  * Base
@@ -218,8 +225,8 @@ const createSphere = (radius, position)=>
 }
 
 createSphere(0.5, { x: 0, y: 3, z: 0 })
-createSphere(0.5, { x: 0, y: 3, z: 0 })
-createSphere(0.5, { x: 0, y: 3, z: 0 })
+createSphere(0.5, { x: 0, y: 3.01, z: 0 })
+
 
 /**
  * Animate
