@@ -58,7 +58,8 @@ const hitSound = new Audio('/sounds/hit.mp3')
 
 const playHitSound = (collision) =>
 {
-    const impactStrength = collision.contact.getImpactVelocityAlongNormal())
+    const impactStrength = collision.contact.getImpactVelocityAlongNormal()
+
     if(impactStrength > 1.5)
     {
         hitSound.currentTime = 0
