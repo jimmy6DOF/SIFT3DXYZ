@@ -2,7 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
-import CANNON, { Shape } from 'cannon'
+import CANNON, { SAPBroadphase, Shape } from 'cannon'
 import { AnimationObjectGroup, SphereGeometry } from 'three'
 
 
@@ -71,6 +71,7 @@ const environmentMapTexture = cubeTextureLoader.load([
  */
 //world
 const world = new CANNON.World()
+world.broadphase = new CANNON.SAPBroadphase(world)
 world.gravity.set(0, -9.82, 0)
 
 // Materials 
