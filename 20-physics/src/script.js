@@ -23,7 +23,20 @@ debugObject.createSphere = () =>
         }
     )
 }
+debugObject.createBox = () =>
+{
+    createBox(
+        Math.random() * 0.5,
+        {
+            x: (Math.random() - 0.5) * 3,
+            y: 3,
+            z: (Math.random() - 0.5) * 3
+        }
+    )
+}
+
 gui.add(debugObject, 'createSphere')
+gui.add(debugObject, 'createBox')
 
 /**
  * Base
@@ -197,17 +210,18 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const objectsToUpdate = []
 
+const sphereGeometry = new THREE.SphereBufferGeometry(1, 20, 20)
+const sphereMaterial = new THREE.MeshStandardMaterial({
+    metalness: 0.3,
+    roughness: 0.4,
+    envMap: environmentMapTexture
+})
+
 const createSphere = (radius, position)=>
 {
     //Three.js Mesh
-    const mesh = new THREE.Mesh(
-        new THREE.SphereBufferGeometry(radius, 20, 20),
-        new THREE.MeshStandardMaterial({
-            metalness: 0.3,
-            roughness: 0.4,
-            envMap: environmentMapTexture
-        })
-    )
+    const mesh = new THREE.Mesh(sphereGeometry, sphereMaterial)
+    mesh.scale.set(radius, radius, radius)
     mesh.castShadow = true
     mesh.position.copy(position)
     scene.add(mesh)
@@ -232,6 +246,44 @@ const createSphere = (radius, position)=>
 }
 
 createSphere(0.5, { x: 0, y: 3.01, z: 0 })
+
+//box
+const boxGeometry = new THREE.BoxBufferGeometry(1, 20, 20)
+const boxMaterial = new THREE.MeshStandardMaterial({
+    metalness: 0.3,
+    roughness: 0.4,
+    envMap: environmentMapTexture
+})
+
+const createBox = (radius, position)=>
+{
+    //Three.js Mesh
+    const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)
+    boxMesh.scale.set(radius, radius, radius)
+    boxMesh.castShadow = true
+    boxMesh.position.copy(position)
+    scene.add(boxMesh)
+
+    // Cannon.js body
+    const boxShape = new CANNON.Box(radius)
+
+    const boxBody = new CANNON.Body({
+        mass: 1,
+        position: new CANNON.Vec3(0, 3, 0),
+        shape: boxShape,
+        material: defaultMaterial
+    })
+    body.position.copy(position)
+    world.addBody(boxBody)
+
+    //Save in objects to update
+    objectsToUpdate.push({
+        boxMesh,
+        boxBody
+    })
+}
+
+createBox(0.5, { x: 0, y: 3.01, z: 0 })
 
 
 /**
