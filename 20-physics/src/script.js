@@ -84,7 +84,7 @@ const defaultContactMaterial = new CANNON.ContactMaterial(
     defaultMaterial,
     defaultMaterial,
     {
-        friction: 0.1,
+        friction: 0.11,
         restitution: 0.7
     }
 )
