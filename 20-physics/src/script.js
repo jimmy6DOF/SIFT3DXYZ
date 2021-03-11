@@ -283,7 +283,7 @@ const createBox = (width, height, depth, position) =>
     objectsToUpdate.push({ mesh, body })
 }
 
-createBox(1, 1.5, 2, { x: 0, y: 3, z: 0 })
+// createBox(1, 1.5, 2, { x: 0, y: 3, z: 0 })
 
 
 /**
@@ -306,6 +306,7 @@ const tick = () =>
     for(const object of objectsToUpdate)
     {
         object.mesh.position.copy(object.body.position)
+        object.mesh.quaternion.copy(object.body.quaternion)
     }
 
 
