@@ -31,6 +31,19 @@ floor.rotation.x = - Math.PI * 0.5
 scene.add(floor)
 
 /**
+ * Sphere Test
+ */
+
+const sphere = new THREE.Mesh(
+    new THREE.SphereBufferGeometry(1, 11, 3),
+    new THREE.MeshNormalMaterial({
+        wireframe: true
+    })
+)
+sphere.position.y = 1.33
+scene.add(sphere)
+
+/**
  * Lights
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
