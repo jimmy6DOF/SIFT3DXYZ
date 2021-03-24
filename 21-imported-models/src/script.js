@@ -26,11 +26,10 @@ gltfLoader.load(
     {
         console.log(gltf.scene)
 
-        for(const child of gltf.scene.children)
+        while(gltf.scene.children.length)
         (
-            scene.add(child)
+            scene.add(gltf.scene.children[0])
         )
-        // scene.add(gltf.scene.children[0])
     }
 )
 
