@@ -21,7 +21,7 @@ const scene = new THREE.Scene()
  */
 const gltfLoader = new GLTFLoader()
 gltfLoader.load(
-    '/models/Duck/glTF-Binary/Duck.glb',
+    '/models/Duck/glTF-Embedded/Duck.gltf',
     (gltf) =>
     {
         scene.add(gltf.scene.children[0])
