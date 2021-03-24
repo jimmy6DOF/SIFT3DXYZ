@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import * as dat from 'dat.gui'
 
 /**
@@ -14,6 +15,12 @@ const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
+
+/**
+ * Models
+ */
+const gltfLoader = new GLTFLoader()
+console.log(gltfLoader)
 
 /**
  * Floor
@@ -30,18 +37,6 @@ floor.receiveShadow = true
 floor.rotation.x = - Math.PI * 0.5
 scene.add(floor)
 
-/**
- * Sphere Test
- */
-
-const sphere = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(1, 11, 3),
-    new THREE.MeshNormalMaterial({
-        wireframe: true
-    })
-)
-sphere.position.y = 1.33
-scene.add(sphere)
 
 /**
  * Lights
