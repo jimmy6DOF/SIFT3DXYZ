@@ -22,18 +22,9 @@ const scene = new THREE.Scene()
 const gltfLoader = new GLTFLoader()
 gltfLoader.load(
     '/models/Duck/glTF/Duck.gltf',
-    () =>
+    (gltf) =>
     {
-        console.log('success')
-    },
-    
-    () =>
-    {
-        console.log('progress')
-    },
-    () =>
-    {
-        console.log('error')
+        console.log(gltf)
     }
 )
 
