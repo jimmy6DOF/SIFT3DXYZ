@@ -29,7 +29,8 @@ const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
 
 gltfLoader.load(
-    '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+    '/models/Fox/glTF/Fox.gltf',
+    // '/models/FlightHelmet/glTF/FlightHelmet.gltf',
     // '/models/Duck/glTF-Draco/Duck.gltf',
     (gltf) =>
     {
