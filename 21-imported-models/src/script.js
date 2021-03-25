@@ -38,7 +38,7 @@ gltfLoader.load(
     {
         mixer = new THREE.AnimationMixer(gltf.scene)
         const action = mixer.clipAction(gltf.animations[0])
-
+//note
         action.play()
 
         gltf.scene.scale.set(0.025, 0.025, 0.025)
