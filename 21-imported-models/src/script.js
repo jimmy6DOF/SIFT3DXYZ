@@ -41,6 +41,7 @@ gltfLoader.load(
         // {
         //     scene.add(child)
         // }
+        gltf.scene.scale.set(0.025, 0.025, 0.025)
         scene.add(gltf.scene)
     }
 )
