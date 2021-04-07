@@ -20,9 +20,16 @@ const scene = new THREE.Scene()
  */
 const testSphere = new THREE.Mesh(
     new THREE.SphereGeometry(1, 32, 32),
-    new THREE.MeshNormalMaterial()
+    new THREE.MeshStandardMaterial()
 )
 scene.add(testSphere)
+
+/**
+ * Light
+ */
+const directionalLight = new THREE.DirectionalLight('#fcfcfc', 1)
+directionalLight.position.set(0.25, 3, -2.25)
+scene.add(directionalLight)
 
 /**
  * Sizes
