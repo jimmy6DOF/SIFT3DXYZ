@@ -32,7 +32,7 @@ const scene = new THREE.Scene()
      {
         if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
         {
-            child.material.envMap = environmentMap
+            // child.material.envMap = environmentMap
             child.material.envMapIntensity = debugObject.envMapIntensity
         }
      })
@@ -51,7 +51,7 @@ const scene = new THREE.Scene()
 ])
 
 scene.background = environmentMap
-// scene.environment = environmentMap
+scene.environment = environmentMap
 
 debugObject.envMapIntensity = 5
 gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(() => {
