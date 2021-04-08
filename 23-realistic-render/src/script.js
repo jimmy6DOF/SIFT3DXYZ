@@ -34,6 +34,7 @@ const scene = new THREE.Scene()
         {
             // child.material.envMap = environmentMap
             child.material.envMapIntensity = debugObject.envMapIntensity
+            child.material.needsUpdate = true
         }
      })
  }
@@ -148,6 +149,7 @@ gui.add(renderer, 'toneMapping', {
 .onFinishChange(() =>
 {
     renderer.toneMapping = Number(renderer.toneMapping)
+    updateAllMaterials()
 })
 
 /**
