@@ -29,6 +29,7 @@ const scene = new THREE.Scene()
  {
      scene.traverse((child) =>
      {
+        if(child instanceof THREE.Mesh) 
         console.log(child)
      })
  }
