@@ -22,22 +22,16 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 /**
- * Test sphere
- */
-const testSphere = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 32, 32),
-    new THREE.MeshStandardMaterial()
-)
-scene.add(testSphere)
-
-/**
  * Models
  */
+
 gltfLoader.load(
     '/models/FlightHelmet/glTF/FlightHelmet.gltf',
     (gltf) => {
-        console.log('success')
-        console.log(gltf)
+        gltf.scene.scale.set(10, 10, 10)
+        gltf.scene.position.set(0, -4, 0)
+        gltf.scene.rotation.y = Math.PI * 0.5
+        scene.add(gltf.scene)
     }
 )
 
