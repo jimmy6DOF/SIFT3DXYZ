@@ -34,6 +34,8 @@ const scene = new THREE.Scene()
     '/textures/environmentMaps/0/nz.jpg'
 ])
 
+scene.background = environmentMap
+
 /**
  * Models
  */
