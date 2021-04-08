@@ -31,7 +31,8 @@ const scene = new THREE.Scene()
      {
         if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
         {
-            console.log(child)
+            child.material.envMap = environmentMap
+            child.material.envMapIntensity = 5
         }
      })
  }
