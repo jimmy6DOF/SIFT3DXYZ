@@ -15,6 +15,7 @@ const cubeTextureLoader = new THREE.CubeTextureLoader()
  */
 // Debug
 const gui = new dat.GUI()
+const debugObject = {}
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -32,7 +33,7 @@ const scene = new THREE.Scene()
         if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
         {
             child.material.envMap = environmentMap
-            child.material.envMapIntensity = 5
+            child.material.envMapIntensity = debugObject.envMapIntensity
         }
      })
  }
@@ -50,6 +51,11 @@ const scene = new THREE.Scene()
 ])
 
 scene.background = environmentMap
+
+debugObject.envMapIntensity = 5
+gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(() => {
+    updateAllMaterials()
+})
 
 /**
  * Models
