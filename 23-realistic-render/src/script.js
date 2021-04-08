@@ -29,8 +29,10 @@ const scene = new THREE.Scene()
  {
      scene.traverse((child) =>
      {
-        if(child instanceof THREE.Mesh) 
-        console.log(child)
+        if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
+        {
+            console.log(child)
+        }
      })
  }
 
