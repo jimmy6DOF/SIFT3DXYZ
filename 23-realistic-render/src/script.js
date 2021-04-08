@@ -51,6 +51,7 @@ const scene = new THREE.Scene()
 ])
 
 scene.background = environmentMap
+// scene.environment = environmentMap
 
 debugObject.envMapIntensity = 5
 gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(() => {
