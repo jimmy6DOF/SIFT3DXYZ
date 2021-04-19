@@ -7,9 +7,11 @@ attribute vec3 position;
 
 void main()
 {
-     float a = 1.0;
-     float b = 2.0;
-     float c = a * b;
+     int foo = 3;
+     float bar = 2.0;
+     int c = foo + int(bar);
+
+
 
      gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 }
