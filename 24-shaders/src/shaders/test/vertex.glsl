@@ -7,8 +7,11 @@ attribute vec3 position;
 
 void main()
 {
-     bool foo = true;
-     bool bar = false;
+     vec2 foo = vec2(- 1.0, 3.0);
+     foo.x = 1.0;
+     foo.y = 2.0;
+     foo *= 2.0;
+
 
      gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 }
