@@ -6,6 +6,10 @@ uniform mat4 modelMatrix;
 attribute vec3 position;
 
 void main()
-     {
-            gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
- }
+{
+     float a = 1.0;
+     float b = 2.0;
+     float c = a * b;
+
+     gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
+}
