@@ -5,6 +5,15 @@ uniform mat4 modelMatrix;
 
 attribute vec3 position;
 
+float loremIpsum()
+
+{
+     float a = 1.0;
+     float b = 2.0;
+
+     return a + b;
+}
+
 void main()
 {
      vec4 foo = vec4(1.0, 2.0, 3.0, 4.0);
