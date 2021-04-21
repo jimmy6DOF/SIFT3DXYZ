@@ -5,18 +5,15 @@ uniform mat4 modelMatrix;
 
 attribute vec3 position;
 
-float loremIpsum()
+float loremIpsum(float a, float b)
 
 {
-     float a = 1.0;
-     float b = 2.0;
-
      return a + b;
 }
 
 void main()
 {
-     float result = loremIpsum();
+     float result = loremIpsum(1.0, 2.0);
 
      gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
 }
