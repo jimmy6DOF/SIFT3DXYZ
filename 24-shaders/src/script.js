@@ -37,7 +37,9 @@ for(let i = 0; i < count; i++)
 }
 
 geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
-console.log(geometry)
+
+
+
 // Material
 const material = new THREE.RawShaderMaterial({
     vertexShader: testVertexShader,
