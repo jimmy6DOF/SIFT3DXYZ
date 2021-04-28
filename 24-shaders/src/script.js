@@ -47,6 +47,10 @@ const material = new THREE.RawShaderMaterial({
     // wireframe: true
     side: THREE.DoubleSide,
     // transparent: true
+    uniforms:
+        {
+            uFrequency: { value: new THREE.Vector2(10, 5) }
+        }
 })
 
 // Mesh
