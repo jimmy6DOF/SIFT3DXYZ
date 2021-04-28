@@ -45,7 +45,7 @@ const material = new THREE.RawShaderMaterial({
     vertexShader: testVertexShader,
     fragmentShader: testFragmentShader,
     // wireframe: true
-    // side: THREE.DoubleSide,
+    side: THREE.DoubleSide,
     // transparent: true
 })
 
