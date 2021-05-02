@@ -1,12 +1,12 @@
 
-uniform mat4 projectionMatrix;
-uniform mat4 viewMatrix;
-uniform mat4 modelMatrix;
+// uniform mat4 projectionMatrix;
+// uniform mat4 viewMatrix;
+// uniform mat4 modelMatrix;
 uniform vec2 uFrequency;
 uniform float uTime;
 
-attribute vec3 position; //contains x,y,and z because its vec3
-attribute vec2 uv;
+// attribute vec3 position; //contains x,y,and z because its vec3
+// attribute vec2 uv;
 
 varying vec2 vUv;
 varying float vElevation;
