@@ -24,6 +24,10 @@ const scene = new THREE.Scene()
 const textureLoader = new THREE.TextureLoader()
 
 const flagTexture = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Color.jpg')
+const flagAO = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_AmbientOcclusion.jpg')
+const flagRoughness = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Roughness.jpg')
+const flagNormal = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Normal.jpg')
+
 
 /**
  * Test mesh
@@ -55,7 +59,10 @@ const material = new THREE.RawShaderMaterial({
             uFrequency: { value: new THREE.Vector2(10, 5) },
             uTime: { value: 0 },
             uColor: { value: new THREE.Color('#bf1363')},
-            uTexture: { value: flagTexture }
+            uTexture: { value: flagTexture },
+            aoMap: { value: flagAO},
+            normalMap: flagNormal,
+            roughnessMap: flagRoughness
         }
 })
 
