@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import testVertexShader from './shaders/test/vertex.glsl'
 import testFragmentShader from './shaders/test/fragment.glsl'
+import { Vector3 } from 'three'
 
 /**
  * Base
@@ -21,6 +22,8 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+
+const flagTexture = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Color.jpg')
 
 /**
  * Test mesh
@@ -44,13 +47,15 @@ geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
 const material = new THREE.RawShaderMaterial({
     vertexShader: testVertexShader,
     fragmentShader: testFragmentShader,
-    // wireframe: true
+    // wireframe: true,
     side: THREE.DoubleSide,
     // transparent: true
     uniforms:
         {
             uFrequency: { value: new THREE.Vector2(10, 5) },
-            uTime: { value: 0 }
+            uTime: { value: 0 },
+            uColor: { value: new THREE.Color('#bf1363')},
+            uTexture: { value: flagTexture }
         }
 })
 
