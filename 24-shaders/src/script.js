@@ -24,9 +24,9 @@ const scene = new THREE.Scene()
 const textureLoader = new THREE.TextureLoader()
 
 const flagTexture = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Color.jpg')
-const flagAO = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_AmbientOcclusion.jpg')
-const flagRoughness = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Roughness.jpg')
-const flagNormal = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Normal.jpg')
+// const flagAO = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_AmbientOcclusion.jpg')
+// const flagRoughness = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Roughness.jpg')
+// const flagNormal = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Normal.jpg')
 
 
 /**
@@ -48,7 +48,7 @@ geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1))
 
 
 // Material
-const material = new THREE.RawShaderMaterial({
+const material = new THREE.ShaderMaterial({
     vertexShader: testVertexShader,
     fragmentShader: testFragmentShader,
     // wireframe: true,
@@ -60,9 +60,9 @@ const material = new THREE.RawShaderMaterial({
             uTime: { value: 0 },
             uColor: { value: new THREE.Color('#bf1363')},
             uTexture: { value: flagTexture },
-            aoMap: { value: flagAO},
-            normalMap: flagNormal,
-            roughnessMap: flagRoughness
+            // aoMap: { value: flagAO},
+            // normalMap: flagNormal,
+            // roughnessMap: flagRoughness
         }
 })
 
