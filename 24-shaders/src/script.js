@@ -23,7 +23,7 @@ const scene = new THREE.Scene()
  */
 const textureLoader = new THREE.TextureLoader()
 
-const flagTexture = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Color.jpg')
+const flagTexture = textureLoader.load('/textures/marble-JPG/marble_color.jpg')
 // const flagAO = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_AmbientOcclusion.jpg')
 // const flagRoughness = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Roughness.jpg')
 // const flagNormal = textureLoader.load('/textures/Fabric-JPG/Fabric048_1K_Normal.jpg')
