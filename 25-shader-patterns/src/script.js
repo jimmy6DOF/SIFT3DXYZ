@@ -22,12 +22,15 @@ const scene = new THREE.Scene()
  */
 // Geometry
 const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
+// geometry.attributes.uv.normalized = true
+console.log(geometry.attributes)
 
 // Material
 const material = new THREE.ShaderMaterial({
     vertexShader: testVertexShader,
     fragmentShader: testFragmentShader,
     side: THREE.DoubleSide
+    // wireframe: true
 })
 
 // Mesh
