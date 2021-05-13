@@ -21,11 +21,11 @@ const scene = new THREE.Scene()
  * Test mesh
  */
 // Geometry
-const geometry = new THREE.BoxBufferGeometry(10, 1, 1, 1)
+const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 1)
 // const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
 // geometry.attributes.uv.normalized = true
 console.log(geometry.attributes)
-
+5
 // Material
 const material = new THREE.ShaderMaterial({
     vertexShader: testVertexShader,
@@ -33,7 +33,7 @@ const material = new THREE.ShaderMaterial({
     side: THREE.DoubleSide,
     // wireframe: true
 })
-
+32
 // Mesh
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
