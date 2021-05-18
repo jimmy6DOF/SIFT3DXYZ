@@ -33,7 +33,7 @@ const flagTexture = textureLoader.load('/textures/marble-JPG/marble_color.jpg')
  * Test mesh
  */
 // Geometry
-const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
+const geometry = new THREE.BoxBufferGeometry(1, 1, 32, 32)
 
 const count = geometry.attributes.position.count
 const randoms = new Float32Array(count)
