@@ -21,7 +21,7 @@ const scene = new THREE.Scene()
  * Test mesh
  */
 // Geometry
-const geometry = new THREE.PlaneBufferGeometry(100, 100, 32, 1)
+const geometry = new THREE.PlaneBufferGeometry(1, 1, 32, 1)
 // const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
 // geometry.attributes.uv.normalized = true
 // console.log(geometry.attributes)
@@ -31,12 +31,12 @@ const material = new THREE.ShaderMaterial({
     vertexShader: testVertexShader,
     fragmentShader: testFragmentShader,
     side: THREE.DoubleSide,
-    wireframe: true
+    // wireframe: true
 })
 32
 // Mesh
 const mesh = new THREE.Mesh(geometry, material)
-mesh.rotateX(Math.PI * 0.5)
+// mesh.rotateX(Math.PI * 0.5)
 scene.add(mesh)
 
 /**
