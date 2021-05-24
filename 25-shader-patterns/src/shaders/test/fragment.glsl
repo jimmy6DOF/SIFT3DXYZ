@@ -86,7 +86,7 @@ void main()
     // float strength = mod(vUv.x * 10.0, 1.0);
     // strength = step(0.8, strength);
 
-    // // Pattern 11
+    // // // Pattern 11
     // float strength = step(0.8, mod(vUv.x * 10.0, 1.0));
     // strength += step(0.8, mod(vUv.y * 10.0, 1.0));
 
@@ -296,7 +296,20 @@ void main()
 
     // Pattern 50
     
-    float strength = step(0.9,sin(cnoise(vUv * 10.0)* 20.0));
+    // float strength = step(0.9, sin(cnoise(vUv * 10.0) * 20.0));
 
-    gl_FragColor = vec4(strength, strength, strength, 1.0);
+    // // Pattern 11 again
+    float strength = step(0.8, mod(vUv.x * 10.0, 1.0));
+    strength += step(0.8, mod(vUv.y * 10.0, 1.0));
+    //clamp strength to remove white overlaps
+    strength = clamp(strength, 0.0, 1.0);
+
+    //Colorful Version
+    vec3 blackColor = vec3(0.0);
+    vec3 uvColor = vec3(vUv, 1.0);
+    vec3 mixedColor = mix(blackColor, uvColor, strength);
+    gl_FragColor = vec4(mixedColor, 1.0);
+
+    //Black and White version
+    // gl_FragColor = vec4(strength, strength, strength, 1.0);
 }
