@@ -10,7 +10,7 @@ import waterFragmentShader from './shaders/water/fragment.glsl'
  */
 // Debug
 const gui = new dat.GUI({ width: 340 })
-dat.GUI.toggleHide();
+// dat.GUI.toggleHide();
 const debugObject = {}
 console.log(debugObject)
 // Canvas
@@ -23,7 +23,7 @@ const scene = new THREE.Scene()
  * Water
  */
 // Geometry
-const waterGeometry = new THREE.PlaneGeometry(2, 2, 128, 128)
+const waterGeometry = new THREE.SphereBufferGeometry(20, 12, 128, 128)
 
 // Color
 debugObject.depthColor = '#eb0915'
@@ -129,8 +129,8 @@ const tick = () =>
     // Update Water
     waterMaterial.uniforms.uTime.value = elapsedTime
 
-    // // Auto Update Camera
-    // camera.position.x = camera.position.x - 0.008
+    // Auto Update Camera
+    camera.position.x = camera.position.x - 0.008
 
     // Update controls
     controls.update()
