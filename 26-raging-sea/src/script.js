@@ -23,7 +23,7 @@ const scene = new THREE.Scene()
  * Water
  */
 // Geometry
-const waterGeometry = new THREE.PlaneGeometry(20, 20, 128, 128)
+const waterGeometry = new THREE.PlaneGeometry(2, 2, 128, 128)
 
 // Color
 debugObject.depthColor = '#eb0915'
@@ -100,7 +100,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(1,1, 1)
+camera.position.set(1, 1, 1)
 scene.add(camera)
 
 // Controls
@@ -127,9 +127,8 @@ const tick = () =>
     // Update Water
     waterMaterial.uniforms.uTime.value = elapsedTime
 
-    // Update Camera
-    camera.position.x = camera.position.x - 0.008
-    camera.position.z = camera.position.z * 1.00008
+    // // Auto Update Camera
+    // camera.position.x = camera.position.x - 0.008
 
     // Update controls
     controls.update()
