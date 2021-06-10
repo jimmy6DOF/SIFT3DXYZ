@@ -10,6 +10,7 @@ import waterFragmentShader from './shaders/water/fragment.glsl'
  */
 // Debug
 const gui = new dat.GUI({ width: 340 })
+dat.GUI.toggleHide();
 const debugObject = {}
 console.log(debugObject)
 // Canvas
@@ -22,11 +23,11 @@ const scene = new THREE.Scene()
  * Water
  */
 // Geometry
-const waterGeometry = new THREE.PlaneGeometry(2, 2, 128, 128)
+const waterGeometry = new THREE.PlaneGeometry(20, 20, 128, 128)
 
 // Color
-debugObject.depthColor = '#0000ff'
-debugObject.surfaceColor = '#8888ff'
+debugObject.depthColor = '#eb0915'
+debugObject.surfaceColor = '#1616de'
 
 // Material
 const waterMaterial = new THREE.ShaderMaterial({
@@ -99,7 +100,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(1, 1, 1)
+camera.position.set(1,1, 1)
 scene.add(camera)
 
 // Controls
@@ -123,8 +124,12 @@ const clock = new THREE.Clock()
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
-    // Update Weter
+    // Update Water
     waterMaterial.uniforms.uTime.value = elapsedTime
+
+    // Update Camera
+    camera.position.x = camera.position.x - 0.008
+    camera.position.z = camera.position.z * 1.00008
 
     // Update controls
     controls.update()
