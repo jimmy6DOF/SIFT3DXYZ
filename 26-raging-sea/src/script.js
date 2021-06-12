@@ -67,7 +67,9 @@ gui
     .onChange(() =>
     {
         waterMaterial.uniforms.uSurfaceColor.value.set(debugObject.surfaceColor)
-    })
+    }),
+gui.add(waterMaterial.uniforms.uColorOffset, 'value').min(0).max(1).step(0.001).name('uColorOffset')
+gui.add(waterMaterial.uniforms.uColorMultiplier, 'value').min(0).max(10).step(0.001).name('uColorMultiplier')
 
 // Mesh
 const water = new THREE.Mesh(waterGeometry, waterMaterial)
