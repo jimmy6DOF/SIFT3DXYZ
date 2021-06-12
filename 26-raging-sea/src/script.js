@@ -75,6 +75,7 @@ gui
     }),
 gui.add(waterMaterial.uniforms.uColorOffset, 'value').min(0).max(1).step(0.001).name('uColorOffset')
 gui.add(waterMaterial.uniforms.uColorMultiplier, 'value').min(0).max(10).step(0.001).name('uColorMultiplier')
+gui.add(waterMaterial, 'wireframe')
 
 // Mesh
 const water = new THREE.Mesh(waterGeometry, waterMaterial)
