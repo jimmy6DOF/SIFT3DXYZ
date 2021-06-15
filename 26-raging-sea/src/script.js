@@ -33,7 +33,7 @@ debugObject.surfaceColor = '#1616de'
 const waterMaterial = new THREE.ShaderMaterial({
     vertexShader: waterVertexShader,
     fragmentShader: waterFragmentShader,
-    wireframe: true,
+    wireframe: false,
     uniforms:
     {
         uTime: { value: 0 },
@@ -44,8 +44,8 @@ const waterMaterial = new THREE.ShaderMaterial({
 
         uSmallWavesElevation: { value: 0.15 },
         uSmallWavesFreqency: { value: 0.3 },
-        uSmallWavesElevation: { value: 0.15 },
-        uSmallWaesInteraction: { value: 4.0 },
+        uSmallWavesSpeed: { value: 0.15 },
+        uSmallWaesInterations: { value: 4.0 },
 
         uDepthColor: { value: new THREE.Color(debugObject.depthColor) },
         uSurfaceColor: { value: new THREE.Color(debugObject.surfaceColor) },
