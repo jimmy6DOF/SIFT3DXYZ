@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import galaxyVertexShader from './shaders/galaxy/vertex.glsl'
 import galaxyFragmentShader from './shaders/galaxy/fragment.glsl'
+import { Sphere } from 'three'
 
 /**
  * Base
@@ -111,12 +112,19 @@ const generateGalaxy = () =>
         fragmentShader: galaxyFragmentShader
     })
 
+
     /**
      * Points
      */
     points = new THREE.Points(geometry, material)
     scene.add(points)
+
+    const ballgeometry = new THREE.SphereGeometry( 0.03, 32, 32 );
+    const ballmaterial = new THREE.MeshBasicMaterial( {color: '#000000' });
+    const ballsphere = new THREE.Mesh( ballgeometry, ballmaterial );
+    scene.add( ballsphere );
 }
+
 
 gui.add(parameters, 'count').min(100).max(1000000).step(100).onFinishChange(generateGalaxy)
 gui.add(parameters, 'radius').min(0.01).max(20).step(0.01).onFinishChange(generateGalaxy)
