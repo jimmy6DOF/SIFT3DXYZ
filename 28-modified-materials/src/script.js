@@ -77,17 +77,22 @@ material.onBeforeCompile = (shader) =>
     console.log(shader)
 }
 
+
+
 /**
  * Models
  */
 gltfLoader.load(
-    '/models/LeePerrySmith/LeePerrySmith.glb',
+    // '/models/LeePerrySmith/LeePerrySmith.glb',
+    '/models/mrmetaverse.glb',
     (gltf) =>
     {
         // Model
         const mesh = gltf.scene.children[0]
         mesh.rotation.y = Math.PI * 0.5
         mesh.material = material
+        mesh.scale.set(4, 4, 4)
+        mesh.position.y = -4.0
         scene.add(mesh)
 
         // Update materials
