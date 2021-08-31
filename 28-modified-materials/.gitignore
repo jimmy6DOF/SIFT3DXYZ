@@ -1,0 +1,8 @@
+.tmp
+.bak
+.swp
+bin/
+tmp/
+node_modules
+package.json
+
