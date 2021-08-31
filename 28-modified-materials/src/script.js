@@ -74,7 +74,14 @@ const material = new THREE.MeshStandardMaterial( {
 
 material.onBeforeCompile = (shader) =>
 {
-    console.log(shader)
+    shader.vertexShader = shader.vertexShader.replace(
+        '#include <begin_vertex>',
+        `
+            #include <begin_vertex>
+            // transformed.y += 1.0;
+            
+        `
+    )
 }
 
 
@@ -83,16 +90,15 @@ material.onBeforeCompile = (shader) =>
  * Models
  */
 gltfLoader.load(
-    // '/models/LeePerrySmith/LeePerrySmith.glb',
-    '/models/mrmetaverse.glb',
+    '/models/LeePerrySmith/LeePerrySmith.glb',
+    // '/models/mrmetaverse.glb',
     (gltf) =>
     {
         // Model
         const mesh = gltf.scene.children[0]
         mesh.rotation.y = Math.PI * 0.5
         mesh.material = material
-        mesh.scale.set(4, 4, 4)
-        mesh.position.y = -4.0
+        mesh.scale.set(1, 1, 1)
         scene.add(mesh)
 
         // Update materials
@@ -139,7 +145,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(4, 1, - 4)
+camera.position.set(5, 3, - 5)
 scene.add(camera)
 
 // Controls
