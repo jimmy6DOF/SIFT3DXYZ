@@ -1,4 +1,4 @@
-# Three.js Journey
+# Angell.fund README
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
