@@ -6,7 +6,7 @@
 
 html
 {
-    background: #1e1a20;
+    background: #FCFCFC;
 }
 
 .webgl
@@ -28,7 +28,7 @@ html
     font-size: 16px;
     line-height: 21px;
     
-    color: #030303;
+    color: #040304;
 }
 
 .section
@@ -38,7 +38,7 @@ html
     height: 100vh;
     position: relative;
     font-family: 'Cabin', sans-serif;
-    color: #ffeded;
+    color: #040304;
     text-transform: uppercase;
     font-size: 7vmin;
     padding-left: 10%;
