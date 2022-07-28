@@ -33,7 +33,7 @@ html
     align-items: flex-start;
 
     /* padding: 23px; */
-    /* gap: 23px; */
+    gap: 2vh;
 
     width: 65vw;
     height: 80vh;
@@ -43,7 +43,7 @@ html
 .h2
 {
     width: 544px;
-    height: 224px;
+    height: auto;
     
     font-family: 'Roboto';
     font-style: normal;
@@ -63,7 +63,7 @@ html
 .p
 {
     width: 519px;
-    height: 146px;
+    height: auto;
     
     font-family: 'DM Mono';
     font-style: normal;

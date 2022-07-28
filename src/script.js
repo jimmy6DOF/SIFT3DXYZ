@@ -47,19 +47,19 @@ const material = new THREE.MeshToonMaterial({
 // Objects
 const objectsDistance = 4
 const mesh1 = new THREE.Mesh(
-    new THREE.TorusGeometry(1, 0.4, 16, 60),
+    new THREE.TorusKnotGeometry(1.1, 0.42, 3, 3),
     material
 )
 const mesh2 = new THREE.Mesh(
-    new THREE.ConeGeometry(1, 2, 32),
+    new THREE.ConeGeometry(1.2, 2, 9),
     material
 )
 const mesh3 = new THREE.Mesh(
-    new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
+    new THREE.TorusGeometry(0.8, 0.35, 3, 3),
     material
 )
 const mesh4 = new THREE.Mesh(
-    new THREE.RingGeometry(0.9, 1.35, 30, 11),
+    new THREE.RingGeometry(1.9, 1.35, 23, 3.14),
     material
 )
 
