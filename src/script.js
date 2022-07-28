@@ -59,14 +59,14 @@ const mesh3 = new THREE.Mesh(
     material
 )
 const mesh4 = new THREE.Mesh(
-    new THREE.SphereGeometry(0.8, 0.35, 123, 11),
+    new THREE.RingGeometry(0.9, 1.35, 30, 11),
     material
 )
 
 mesh1.position.x = 1.5
 mesh2.position.x = - 1.8
 mesh3.position.x = 1.6
-mesh4.position.x = - 1.9
+mesh4.position.x = - 2.1
 
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * .9
@@ -224,6 +224,7 @@ const tick = () =>
         mesh.rotation.x += deltaTime * 0.23
         mesh.rotation.y += deltaTime * 0.13
     }
+
 
     // Render
     renderer.render(scene, camera)
