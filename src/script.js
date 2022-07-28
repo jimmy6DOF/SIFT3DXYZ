@@ -55,7 +55,7 @@ const mesh2 = new THREE.Mesh(
     material
 )
 const mesh3 = new THREE.Mesh(
-    new THREE.TorusGeometry(0.8, 0.35, 3, 3),
+    new THREE.TorusGeometry(1.28, 0.35, 3, 3),
     material
 )
 const mesh4 = new THREE.Mesh(
@@ -65,8 +65,8 @@ const mesh4 = new THREE.Mesh(
 
 mesh1.position.x = 1.5
 mesh2.position.x = - 1.8
-mesh3.position.x = 1.6
-mesh4.position.x = - 2.1
+mesh3.position.x = 1.4
+mesh4.position.x = - 1.37
 
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * .9

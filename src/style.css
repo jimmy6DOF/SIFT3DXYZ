@@ -11,9 +11,9 @@ html
     background: #FCFCFC;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding: 0px;
-    gap: 30px;
+    /* gap: 20vw; */
     position: relative;
 }
 
@@ -30,7 +30,7 @@ html
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    /* align-items: flex-start; */
 
     /* padding: 23px; */
     gap: 2vh;
@@ -42,13 +42,13 @@ html
 
 .h2
 {
-    width: 544px;
+    width: 50vw;
     height: auto;
     
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
-    font-size: 48px;
+    font-size: 3.23rem;
     
     color: #040304;
     
@@ -62,13 +62,13 @@ html
 
 .p
 {
-    width: 519px;
+    width: 55vw;
     height: auto;
     
     font-family: 'DM Mono';
     font-style: normal;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 1.65rem;
     
     color: #040304;
     
@@ -90,11 +90,12 @@ html
     align-items: flex-start;
     position: left;
     color: #040304;
+    gap: 20vh;
 
-    width: 75vw;
+    /* width: 75vw; */
     height: 90vh;
 
-    font-size: 3vmin;
+    /* font-size: 3vmin; */
 }
 
 .sectionb
@@ -102,15 +103,16 @@ html
 
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: right;
     align-items: flex-end;
     position: right;
     color: #040304;
+    gap: 20vh;
 
-    width: 75vw;
+    /* width: 75vw; */
     height: 90vh;
 
-    font-size: 3vmin;
+    /* font-size: 3vmin; */
 
 }
 
