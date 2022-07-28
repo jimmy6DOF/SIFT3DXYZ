@@ -2,11 +2,19 @@
 {
     margin: 0;
     padding: 0;
+
+    /* background: #FCFCFC; */
 }
 
 html
 {
     background: #FCFCFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+    position: relative;
 }
 
 .webgl
@@ -17,37 +25,98 @@ html
     outline: none;
 }
 
+.blob
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    /* padding: 23px; */
+    /* gap: 23px; */
+
+    width: 65vw;
+    height: 80vh;
+}
+
+
+.h2
+{
+    width: 544px;
+    height: 224px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    
+    color: #040304;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
 .p
 {
-    width: 501px;
-    height: 127px;
+    width: 519px;
+    height: 146px;
     
     font-family: 'DM Mono';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 26px;
     
     color: #040304;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
 }
+
 
 .section
 {
     display: flex;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    font-family: 'Cabin', sans-serif;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: left;
     color: #040304;
-    text-transform: uppercase;
-    font-size: 7vmin;
-    padding-left: 10%;
-    padding-right: 10%;
+
+    width: 75vw;
+    height: 90vh;
+
+    font-size: 3vmin;
 }
 
-section:nth-child(odd)
+.sectionb
+{
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
+    position: right;
+    color: #040304;
+
+    width: 75vw;
+    height: 90vh;
+
+    font-size: 3vmin;
+
+}
+
+/* section:nth-child(odd)
 {
     justify-content: flex-end;
-}
+} */
 
 /*# sourceMappingURL=main.css.map*/

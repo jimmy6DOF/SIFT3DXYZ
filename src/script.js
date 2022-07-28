@@ -40,7 +40,8 @@ gradientTexture.magFilter = THREE.NearestFilter
 // Material
 const material = new THREE.MeshToonMaterial({
     color: parameters.materialColor,
-    gradientMap: gradientTexture
+    gradientMap: gradientTexture,
+    wireframe: true,
 })
 
 // Objects
@@ -57,18 +58,24 @@ const mesh3 = new THREE.Mesh(
     new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
     material
 )
+const mesh4 = new THREE.Mesh(
+    new THREE.SphereGeometry(0.8, 0.35, 123, 11),
+    material
+)
 
-mesh1.position.x = 2
-mesh2.position.x = - 2
-mesh3.position.x = 2
+mesh1.position.x = 1.5
+mesh2.position.x = - 1.8
+mesh3.position.x = 1.6
+mesh4.position.x = - 1.9
 
 mesh1.position.y = - objectsDistance * 0
-mesh2.position.y = - objectsDistance * 1
-mesh3.position.y = - objectsDistance * 2
+mesh2.position.y = - objectsDistance * .9
+mesh3.position.y = - objectsDistance * 1.8
+mesh4.position.y = - objectsDistance * 2.7
 
-scene.add(mesh1, mesh2, mesh3)
+scene.add(mesh1, mesh2, mesh3, mesh4)
 
-const sectionMeshes = [ mesh1, mesh2, mesh3 ]
+const sectionMeshes = [ mesh1, mesh2, mesh3, mesh4 ]
 
 /**
  * Lights
@@ -81,14 +88,14 @@ scene.add(directionalLight)
  * Particles
  */
 // Geometry
-const particlesCount = 200
+const particlesCount = 223
 const positions = new Float32Array(particlesCount * 3)
 
 for(let i = 0; i < particlesCount; i++)
 {
-    positions[i * 3 + 0] = (Math.random() - 0.5) * 10
+    positions[i * 3 + 0] = (Math.random() - 0.5) * 9
     positions[i * 3 + 1] = objectsDistance * 0.5 - Math.random() * objectsDistance * sectionMeshes.length
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 10
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 8
 }
 
 const particlesGeometry = new THREE.BufferGeometry()
@@ -98,7 +105,7 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 
 const particlesMaterial = new THREE.PointsMaterial({
     color: parameters.materialColor,
     sizeAttenuation: textureLoader,
-    size: 0.03
+    size: 0.05
 })
 
 // Points
@@ -168,9 +175,9 @@ window.addEventListener('scroll', () =>
         gsap.to(
             sectionMeshes[currentSection].rotation,
             {
-                duration: 1.5,
+                duration: 1.23,
                 ease: 'power2.inOut',
-                x: '+=6',
+                x: '+=3',
                 y: '+=3',
                 z: '+=1.5'
             }
@@ -214,8 +221,8 @@ const tick = () =>
     // Animate meshes
     for(const mesh of sectionMeshes)
     {
-        mesh.rotation.x += deltaTime * 0.1
-        mesh.rotation.y += deltaTime * 0.12
+        mesh.rotation.x += deltaTime * 0.23
+        mesh.rotation.y += deltaTime * 0.13
     }
 
     // Render
