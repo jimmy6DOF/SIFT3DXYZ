@@ -69,9 +69,9 @@ mesh3.position.x = 1.4
 mesh4.position.x = - 1.37
 
 mesh1.position.y = - objectsDistance * 0
-mesh2.position.y = - objectsDistance * .9
-mesh3.position.y = - objectsDistance * 1.8
-mesh4.position.y = - objectsDistance * 2.7
+mesh2.position.y = - objectsDistance * 1.1
+mesh3.position.y = - objectsDistance * 2.0
+mesh4.position.y = - objectsDistance * 3.0
 
 scene.add(mesh1, mesh2, mesh3, mesh4)
 
