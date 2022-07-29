@@ -2,27 +2,28 @@
 {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 
-    /* background: #FCFCFC; */
 }
 
 html
 {
     background: #FCFCFC;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    padding: 0px;
-    /* gap: 20vw; */
-    position: relative;
+    position: flex;
+    max-width: 100vw;
+    height: 100vh;
 }
 
 .webgl
 {
     position: fixed;
+    padding: 0;
     top: 0;
     left: 0;
     outline: none;
+    width: auto;
+    height: auto;
+    overflow: hidden;
 }
 
 .header
@@ -35,12 +36,12 @@ html
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
-    gap: 368px;
+    /* gap: 20vh; */
 
-    width: 1440px;
-    height: 144px;
+    width: 100vw;
+    height: 10vh;
 
 
     /* Inside auto layout */
@@ -58,10 +59,10 @@ html
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 13px;
+    gap: 2.5vw;
 
-    width: 575px;
-    height: 104px;
+    width: auto;
+    height: auto;
 
 
     /* Inside auto layout */
@@ -93,8 +94,8 @@ html
 {
     /* Angell-Logo Position */
 
-    width: 98px;
-    height: 90px;
+    width: auto;
+    height: auto;
     
     
     /* Inside auto layout */
@@ -113,7 +114,7 @@ html
     font-family: 'DM Mono';
     font-style: normal;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 4.5vh;
     /* line-height: 83px; */
     
     color: #040304;
@@ -133,7 +134,7 @@ html
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 2.75vh;
     /* line-height: auto; */
     /* identical to box height */
 
@@ -151,7 +152,6 @@ html
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: flex-start; */
 
     /* padding: 23px; */
     gap: 2vh;
@@ -163,13 +163,13 @@ html
 
 .h2
 {
-    width: 50vw;
+    width: auto;
     height: auto;
     
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 800;
-    font-size: 3.23rem;
+    font-size: 4vh;
     
     color: #040304;
     
@@ -189,7 +189,7 @@ html
     font-family: 'DM Mono';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.65rem;
+    font-size: 2.50vh;
     
     color: #040304;
     
@@ -207,16 +207,14 @@ html
 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: flex-start;
     position: left;
     color: #040304;
-    gap: 9vw;
+    padding-left: 6vw;
 
-    /* width: 75vw; */
+    width: 100vw;
     height: 100vh;
 
-    /* font-size: 3vmin; */
 }
 
 .sectionb
@@ -225,12 +223,10 @@ html
     display: flex;
     flex-direction: row-reverse;
     /* justify-content: right; */
-    align-items: flex-end;
-    /* position: right; */
+    align-items: flex-start;
     color: #040304;
-    gap: 90vw;
 
-    /* width: 75vw; */
+    width: 100vw;
     height: 100vh;
 
     /* font-size: 3vmin; */
