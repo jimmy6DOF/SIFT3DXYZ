@@ -154,10 +154,11 @@ html
     justify-content: center;
 
     /* padding: 23px; */
-    gap: 2vh;
+    gap: 4vh;
+    padding: 10vh;
 
     width: 65vw;
-    height: 80vh;
+    height: auto;
 }
 
 
@@ -183,7 +184,7 @@ html
 
 .p
 {
-    width: 55vw;
+    width: auto;
     height: auto;
     
     font-family: 'DM Mono';
@@ -211,9 +212,11 @@ html
     position: left;
     color: #040304;
     padding-left: 6vw;
+    padding-top: 4vw;
 
     width: 100vw;
     height: 100vh;
+    
 
 }
 
@@ -225,6 +228,8 @@ html
     /* justify-content: right; */
     align-items: flex-start;
     color: #040304;
+    padding-top: 4vw;
+
 
     width: 100vw;
     height: 100vh;
