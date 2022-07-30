@@ -212,9 +212,10 @@ html
     position: left;
     color: #040304;
     padding-left: 6vw;
-    padding-top: 4vw;
+    padding-top: 8vh;
+    padding-bottom: 6vh;
 
-    width: 100vw;
+    width: auto;
     height: 100vh;
     
 
@@ -228,10 +229,10 @@ html
     /* justify-content: right; */
     align-items: flex-start;
     color: #040304;
-    padding-top: 4vw;
+    padding-top: 8vw;
+    padding-bottom: auto;
 
-
-    width: 100vw;
+    width: auto;
     height: 100vh;
 
     /* font-size: 3vmin; */
