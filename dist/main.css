@@ -238,4 +238,190 @@ html
     justify-content: flex-end;
 } */
 
+
+.footertexta
+{
+    /* footertexta */
+
+
+    width: auto;
+    height: auto;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5vw;
+    line-height: auto;
+    /* identical to box height */
+
+
+    color: #040304;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.footertextb
+{
+    /* footertextb */
+
+
+    width: auto;
+    height: auto;
+
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    flex-wrap: wrap;
+    /* identical to box height */
+
+
+    color: #040304;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.footerbuttontext
+{
+    /* Get in touch! */
+
+
+    width: auto;
+    height: auto;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: auto;
+    /* identical to box height */
+
+
+    color: #FCFCFC;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.footerbutton
+{
+    /* footerCTA */
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 46px;
+    gap: 10px;
+
+    width: auto;
+    height: auto;
+
+    background: #623CEA;
+    border-radius: 10px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+
+.footerblob
+{
+    /* footerblob */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    padding: 0px;
+    gap: 24px;
+
+    width: auto;
+    height: auto;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.footerbundle
+{
+    /* footer bundle */
+
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    flex-wrap: wrap;
+    /* position: absolute; */
+    padding: 0px;
+    gap: 4vw;
+
+    flex: none;
+    order: 1;
+
+}
+
+.footlogo
+{
+    width: auto;
+    height: auto;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.footer
+{
+    /* Footer */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    padding: 23px;
+    width: 100vw;
+    height: 45vh;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 7;
+    flex-grow: 0;
+}
+
+
+
 /*# sourceMappingURL=main.css.map*/
