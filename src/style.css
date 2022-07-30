@@ -403,6 +403,20 @@ html
     flex-grow: 0;
 }
 
+@media only screen and (max-width: 600px) {
+    .footerbundle {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        flex-wrap: wrap;
+    }
+
+    .footerblob {
+        align-items: center;
+        padding: 2rem;
+    }
+}
+
 .footer
 {
     /* Footer */
@@ -411,9 +425,9 @@ html
     flex-direction: column;
     justify-content: left;
     align-items: center;
-    padding: 23px;
+    margin-bottom: 8rem;
     width: 100vw;
-    height: 45vh;
+    height: auto;
     
     /* Inside auto layout */
     
