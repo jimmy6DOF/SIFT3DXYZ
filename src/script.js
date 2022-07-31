@@ -66,14 +66,14 @@ const mesh4 = new THREE.Mesh(
 )
 
 mesh1.position.x = 1.5
-mesh2.position.x = - 1.8
+mesh2.position.x = - 1.6
 mesh3.position.x = 1.4
-mesh4.position.x = - 1.37
+mesh4.position.x = - 1.23
 
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * 1.1
 mesh3.position.y = - objectsDistance * 2.0
-mesh4.position.y = - objectsDistance * 3.0
+mesh4.position.y = - objectsDistance * 3.23
 
 scene.add(mesh1, mesh2, mesh3, mesh4)
 
@@ -95,7 +95,7 @@ const positions = new Float32Array(particlesCount * 3)
 
 for(let i = 0; i < particlesCount; i++)
 {
-    positions[i * 3 + 0] = (Math.random() - 0.5) * 9
+    positions[i * 3 + 0] = (Math.random() - 0.5) * 9.23
     positions[i * 3 + 1] = objectsDistance * 0.5 - Math.random() * objectsDistance * sectionMeshes.length
     positions[i * 3 + 2] = (Math.random() - 0.5) * 8
 }
