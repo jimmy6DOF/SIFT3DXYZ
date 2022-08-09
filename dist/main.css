@@ -281,6 +281,7 @@ html
     height: auto;
 
     font-family: 'DM Mono';
+    text-align: center;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -342,12 +343,27 @@ html
 
     background: #623CEA;
     border-radius: 10px;
+    isolation: isolate;
+    z-index: 10;
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
     /* Inside auto layout */
 
     flex: none;
     order: 2;
     flex-grow: 0;
+}
+
+.footerbutton:hover {
+    background: black;
 }
 
 
