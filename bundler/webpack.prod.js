@@ -11,7 +11,7 @@ module.exports = merge(
             new CleanWebpackPlugin()
         ],
 
-        output: {
-        clean: true,
-        }, 
+        // output: {
+        // clean: true,
+        // }, 
     })
