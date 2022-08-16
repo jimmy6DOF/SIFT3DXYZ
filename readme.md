@@ -1,5 +1,7 @@
 # Angell.fund README
 
+This repo is for managing the https://angell.fund/ page. The fund is an upcoming effort to incubate and fund metaverse founders who leverage and contribute towards open standards for Metaverse interoperability. 
+
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
