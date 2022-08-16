@@ -37,7 +37,7 @@ html
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px;
+    padding: 8vmin;
     /* gap: 20vh; */
 
     width: 100vw;
