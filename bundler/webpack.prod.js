@@ -9,6 +9,11 @@ module.exports = merge(
         plugins:
         [
             new CleanWebpackPlugin()
-        ]
-    }
-)
+        ],
+
+        output: {
+            filename: '[name].bundle.js',
+            path: path.resolve(__dirname, 'dist'),
+        clean: true,
+        }, 
+    })
