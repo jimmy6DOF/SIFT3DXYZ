@@ -14,7 +14,10 @@ npm install
 npm run dev
 
 # Build for production in the dist/ directory
+# Note: Before commiting a new build, Copy the CNAME file into the new builds /docs folder 
 npm run build
+
+
 ```
 
 Special thanks to [Bruno Simon](https://bruno-simon.com/) for the lessons in [ThreeJS-Journey](https://threejs-journey.com/), particularly _lesson 21_ which helped create this page. 
