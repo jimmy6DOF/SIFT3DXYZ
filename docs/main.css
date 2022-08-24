@@ -41,7 +41,7 @@ html
     /* gap: 20vh; */
 
     width: 100vw;
-    height: 10vh;
+    /* height: 10vh; */
 
 
     /* Inside auto layout */
@@ -71,6 +71,18 @@ html
     order: 0;
     flex-grow: 0;
 }
+
+@media only screen and (max-width: 600px) {
+    .logocomplete {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        flex-wrap: wrap;
+        padding-left: 16vmin;
+    }
+}
+
 
 .logoblob
 {
@@ -217,7 +229,7 @@ html
     padding-bottom: 6vh;
 
     width: auto;
-    height: 100vh;
+    /* height: 100vh; */
     
 
 }
@@ -231,10 +243,10 @@ html
     align-items: flex-start;
     color: #040304;
     padding-top: 8vw;
-    padding-bottom: auto;
+    padding-bottom: 200px;
 
     width: auto;
-    height: 100vh;
+    /* height: 100vh; */
 
     /* font-size: 3vmin; */
 
@@ -337,6 +349,7 @@ html
     align-items: center;
     padding: 10px 46px;
     gap: 10px;
+    text-decoration: none;
 
     width: auto;
     height: auto;
@@ -405,7 +418,6 @@ html
     width: auto;
     flex-wrap: wrap;
     /* position: absolute; */
-    padding: 0px;
     gap: 4vw;
 
     flex: none;
