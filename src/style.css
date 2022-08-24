@@ -243,7 +243,7 @@ html
     align-items: flex-start;
     color: #040304;
     padding-top: 8vw;
-    padding-bottom: auto;
+    padding-bottom: 200px;
 
     width: auto;
     /* height: 100vh; */
@@ -418,7 +418,6 @@ html
     width: auto;
     flex-wrap: wrap;
     /* position: absolute; */
-    padding: 0px;
     gap: 4vw;
 
     flex: none;
