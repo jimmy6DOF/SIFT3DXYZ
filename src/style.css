@@ -16,6 +16,7 @@ html
 
 .webgl
 {
+    z-index: -1;
     position: fixed;
     padding: 0;
     top: 0;
@@ -109,7 +110,8 @@ html
     width: auto;
     height: auto;
     
-    
+    margin-top: 50px;
+    margin-bottom: 50px;
     /* Inside auto layout */
     
     flex: none;
