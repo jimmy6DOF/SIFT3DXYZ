@@ -1,6 +1,11 @@
-# Angell.fund README
 
-This repo is for managing the https://angell.fund/ page. The fund is an upcoming effort to incubate and fund metaverse founders who leverage and contribute towards open standards for Metaverse interoperability. 
+
+# Sift3d.xyz README FILE
+
+This repo is for managing the https://sift3d.xyz/ splash page using a combination of Three.JS and the Flow Immersive embedded Data Story Telling platform. 
+
+The Page was provided under an Open Source repo developed by those credited below. Changes should be applied to the /src folder after cloning the project.
+
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
@@ -14,10 +19,20 @@ npm install
 npm run dev
 
 # Build for production in the dist/ directory
-# Note: Before commiting a new build, Copy the CNAME file into the new builds /docs folder 
+# Note: Before committing a new build, Copy the CNAME file into the new builds /docs folder 
 npm run build
 
 
 ```
 
-Special thanks to [Bruno Simon](https://bruno-simon.com/) for the lessons in [ThreeJS-Journey](https://threejs-journey.com/), particularly _lesson 21_ which helped create this page. 
+The /docs folder is the output of running `npm run build` 
+
+Special thanks to [@MrMetaverse](https://alton.tech/) for his outstanding Open Metaverse community stewardship and helping a small effort half way around the world like this to get off the ground and inspired by the amazing teaching skills of [Bruno Simon](https://bruno-simon.com/) in [ThreeJS-Journey](https://threejs-journey.com/), particularly _lesson 21_ which helped create this page. The X-Y-Z Graphic was provided under CC(0) by (####TODO##### Fill This In) 
+
+
+
+
+
+
+
+
