@@ -27,7 +27,7 @@ npm run build
 
 The /docs folder is the output of running `npm run build` 
 
-Special thanks to [@MrMetaverse](https://alton.tech/) for his outstanding Open Metaverse community stewardship and helping a small effort half way around the world like this to get off the ground and inspired by the amazing teaching skills of [Bruno Simon](https://bruno-simon.com/) in [ThreeJS-Journey](https://threejs-journey.com/), particularly _lesson 21_ which helped create this page. The X-Y-Z Graphic was provided under CC(0) by (####TODO##### Fill This In) 
+Special thanks to [@MrMetaverse](https://alton.tech/) for his outstanding Open Metaverse community stewardship and helping a small effort half way around the world like this to get off the ground and inspired by the amazing teaching skills of [Bruno Simon](https://bruno-simon.com/) in [ThreeJS-Journey](https://threejs-journey.com/), particularly _lesson 21_ which helped create this page. The X-Y-Z Graphic was provided under licensed through CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/) for the asset "calibration_test_2" (https://sketchfab.com/3d-models/calibration-test-2-4d966e9209be4830a513800605fc6f3e) by the obviously talented nox_silente (https://sketchfab.com/nox_silente)  
 
 
 
