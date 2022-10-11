@@ -2,7 +2,7 @@
 
 # Sift3d.xyz README FILE
 
-This repo is for managing the https://sift3d.xyz/ splash page using a combination of Three.JS and the Flow Immersive embedded Data Story Telling platform. 
+This repo is for managing the http://sift3d.xyz/ splash page using a combination of Three.JS and the Flow Immersive embedded Data Story Telling platform. 
 
 The Page was provided under an Open Source repo developed by those credited below. Changes should be applied to the /src folder after cloning the project.
 
