@@ -52,7 +52,16 @@ html
     flex-grow: 0;
 }
 
-.logocomplete
+.logocomplete {
+    display: flex;
+    flex-direction: column;
+}
+
+.logonew img {
+    max-width: 400px;
+}
+
+#logoinner
 {
     /* Auto layout */
 
@@ -141,14 +150,14 @@ html
 .logotextb
 {
     /* Tagline */
-    position: flex;
+    display: block;
     width: auto;
     height: auto;
 
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
-    font-size: 2.75vh;
+    font-size: 2.35vh;
     /* line-height: auto; */
     /* identical to box height */
     word-wrap: normal;
@@ -161,6 +170,18 @@ html
     order: 1;
     flex-grow: 0;
 }
+
+/*@media only screen and (max-width: 600px) {*/
+    .logotextb {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .logotextb span.letter {
+        font-weight: bold;
+        font-family: 'DM Mono';
+    }
+/*}*/
 
 .blob
 {
@@ -276,7 +297,6 @@ html
     /* identical to box height */
 
 
-    color: #040304;
 
 
     /* Inside auto layout */
@@ -304,7 +324,6 @@ html
     /* identical to box height */
 
 
-    color: #040304;
 
 
     /* Inside auto layout */
@@ -378,9 +397,44 @@ html
 }
 
 .footerbutton:hover {
-    background: black;
+    background: white;
 }
 
+.footerbuttontext:hover {
+    color: #040304 !important;
+}
+
+.social {
+    margin: 30px 0;
+}
+
+.buttonbar {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.buttonbar i:hover {
+    color: #623CEA;
+}
+
+.buttonbar i {
+    transition: color 0.5s;
+    color: white;
+    font-size: 32px;
+}
+
+.social h2 {
+    margin: 10px 0;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social h3 {
+    margin: 10px 0;
+    font-family: 'DM Mono', sans-serif;
+}
 
 .footerblob
 {
@@ -423,7 +477,6 @@ html
     gap: 4vw;
 
     flex: none;
-    order: 1;
 
 }
 
@@ -454,6 +507,10 @@ html
     }
 }
 
+.footer-video {
+    max-height: 480px;
+}
+
 .footer
 {
     /* Footer */
@@ -462,9 +519,12 @@ html
     flex-direction: column;
     justify-content: left;
     align-items: center;
-    margin-bottom: 8rem;
+    margin-top: 5rem;
+    padding-bottom: 8rem;
     width: 100vw;
     height: auto;
+    background-color: black;
+    color: white;
     
     /* Inside auto layout */
     

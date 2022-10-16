@@ -1,4 +1,4 @@
-<!-- Special thanks from me to @MrMetaverse and he credits Bruno Simon & Art by nox_silente (see GitHub Readme for details)
+<!-- Special thanks from me to @MrMetaverse and he credits Bruno Simon & Art by nox_silente (see GitHub Readme for details) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +13,11 @@
     <meta name="keywords" content="WebXR , Spatial Computing , 3D, Metaverse, Virtual Reality , Augmented Reality , Mixed Reality , Extended Reality ">
 
     <style>
+        @import url('https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css');
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Roboto&display=swap');
     </style>
+    
+    <script src="https://kit.fontawesome.com/c76a7d16cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <canvas class="webgl"></canvas>
@@ -22,17 +25,26 @@
     <header class="header">
         
         <logo class="logocomplete">
-            <logoimg class="logoplace">
-                <img src="./calibration_test_2_glTF-removebg-preview.png"  width="318" height="173" />
-                <!-- <svg width="326" height="306" viewBox="0 0 326 306" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="326" height="306" fill="black"/>
-                    <rect x="65" y="80" width="195" height="147" fill="#D9D9D9"/>
-                </svg>                     -->
-            </logoimg>
+            <logimg class="logonew">
+                <img src="./logo_new_700x356.png" alt="sift3d">
+            </logimg>
+            <div id="logoinner">
+                <logoimg class="logoplace">
+                    <img src="./calibration_test_2_glTF-removebg-preview.png"  width="318" height="173" />
+                    <!-- <svg width="326" height="306" viewBox="0 0 326 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="326" height="306" fill="black"/>
+                        <rect x="65" y="80" width="195" height="147" fill="#D9D9D9"/>
+                    </svg>                     -->
+                </logoimg>
             <logoblob class="logoblob">
                 <logotexta class="logotexta">Sift3D.xyz</logotexta>
-                <logotextb class="logotextb">Understanding Things Better in X/Y/Z</logotextb>
+                <logotextb class="logotextb">
+                    <span class="letter">[X]</span>
+                    <span>Understanding Things Better in <span class="letter">[Y]</span></span>
+                    <span class="letter">[Z]</span>
+                </logotextb>
             </logoblob>
+            </div>
         </logo>
     </header>
     <section class="section">
@@ -68,14 +80,16 @@
     </div>
 
     <footer class="footer">
-        <div class="footerbundle">
-            <div class="footerblob">
-                <div class="footertexta">
-                    Questions?
-                </div>
-                <div class="footertextb">
-                    Immersive Analytics
-                </div>				
+        <video class="footer-video" src="./animated_logo.webm" autoplay loop></video>
+        <div class="footer-links">
+            <div class="footerbundle">
+                <div class="footerblob">
+                    <div class="footertexta">
+                        Questions?
+                    </div>
+                    <div class="footertextb">
+                        Immersive Analytics
+                    </div>				
 				</div>
                 <a target="_blank" href="https://twitter.com/jimmy6dof" class="footerbutton">
                     <p class="footerbuttontext">
@@ -83,11 +97,27 @@
                     </p>
                 </a>
             </div>
-			
-            <logoimg class="logoplace">
-                <img src="./calibration_test_2_glTF-removebg-preview.png"  width="318" height="173" />
-                         
-            </logoimg>
+            <section class="social">
+                <h2>Links</h2>
+                <h3>Connect with us on social media</h3>
+                <div class="buttonbar">
+                    <a href="https://tiktok.com">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://tiktok.com">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://linkedin.com">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:username@email.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </section>
         </div>
     </footer>
 </body>
